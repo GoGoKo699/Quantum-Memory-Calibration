@@ -1,0 +1,27 @@
+# Quantum Memory Calibration
+
+> Passive quantum storage under uncertain spatial couplings to a common Gaussian dephasing field: fixed-error lifetime bounds, retained classical-calibration information, and supplied-profile comparisons.
+
+## Overview
+
+- [Repository overview](README.md): Main results, reading routes, scope, and contact.
+- [Scientific account](science/README.md): Organization and proof dependencies.
+
+## Scientific questions
+
+- [Operational model](science/model.md): Channel normalization, allowed endpoint operations, classical records, random keys, counted quantum carriers, calibration interface, and error criteria. Read this before transferring a theorem to a different noise or control model.
+- [Continuous uncertainty](science/lifetime.md): Why fixed uncertainty prevents a positive-rate passive lifetime from growing with register size; explicit constants and constructions; hard-budget and information-budget implications for diverging times.
+- [Two-value calibration](science/calibration_rate.md): Exact asymptotic rate, finite hard-alphabet and mutual-information bounds, zero-error pair codes, positive-coupling class codes, and generic converse lemmas.
+- [Supplied coupling profile](science/calibrated_memory.md): Inherited spectral-occupancy baseline, finite-precision calibration construction, and the unresolved continuous calibration-cost gap.
+- [Interpretation](science/interpretation.md): Distinct error limits, rare Gaussian events, correlated-error example, reusable device information, and the during-storage-control boundary.
+
+## Sources and reproduction
+
+- [Related work](references/related_work.md): Prior coding, calibration, side-information, and correlated-channel results; inherited ingredients and consequential distinctions.
+- [Primary-source record](references/source_evidence.md): Inspected sources and access limitations.
+- [Bibliography](references.bib): Verified bibliographic metadata.
+- [Verification guide](verification/README.md): Commands, dependencies, checks, numerical tolerances, and limits.
+- [Calibration checks](verification/check_calibration.py): Physical sign averages, CP comparisons, exact eigenspaces, conditional information, and Gaussian error-floor probabilities.
+- [Correlated phase-code check](verification/check_phase_code.py): Actual finite syndrome recovery under one shared Gaussian field.
+
+The analytical pages are authoritative for the theorem statements. Computational examples do not replace their all-size proofs. Retained calibration information and its experimental acquisition cost are different resources throughout this account.

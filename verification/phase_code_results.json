@@ -1,0 +1,151 @@
+{
+  "all_checks_passed": true,
+  "arithmetic": {
+    "backend": "numpy",
+    "maximum_analytic_marginal_error": 3.6429192995513e-17,
+    "maximum_quadrature_probability_change": 1.1102230246252e-16,
+    "numpy_version": "2.3.5",
+    "precision": "float64",
+    "quadrature_orders": [
+      64,
+      128
+    ],
+    "tolerance": 2e-13
+  },
+  "bounds": {
+    "coarse_markov_mean_weight": 0.20007244680563,
+    "coefficient_specific_t_sum_mismatch_squared": 0.20776,
+    "integer_threshold_markov_mean_weight_over_two": 0.10003622340281,
+    "uniform_7_times_4_t_delta_squared": 0.392
+  },
+  "correlated_noise": {
+    "analytic_mean_weight": 0.20007244680563,
+    "failure_probability_weight_above_one": 0.031989747540668,
+    "first_two_error_indicators_covariance": 0.0041621842033951,
+    "logical_X_error_probabilities": {
+      "0000": 0.96801025245933,
+      "0001": 0.010571479976321,
+      "0010": 0.0051037424955302,
+      "0011": 0.00080275264664865,
+      "0100": 0.003441766061321,
+      "0101": 0.00079635986424414,
+      "0110": 0.00078476624172044,
+      "0111": 0.0021946462404301,
+      "1000": 0.00080977446840636,
+      "1001": 0.0022729585395583,
+      "1010": 0.0022161012670255,
+      "1011": 0.00048621141215173,
+      "1100": 0.0021115813586282,
+      "1101": 0.00028899353354168,
+      "1110": 0.0001003214957737,
+      "1111": 8.291939366808e-06
+    },
+    "logical_half_diamond_error": 0.031989747540668,
+    "mean_weight": 0.20007244680563,
+    "phase_error_marginals": [
+      0.052977871249821,
+      0.043363304174024,
+      0.034585643326935,
+      0.026700633506898,
+      0.019758982140517,
+      0.013805816599377,
+      0.0088801958080558
+    ]
+  },
+  "independent_noise_with_same_marginals": {
+    "correlated_minus_independent_failure": 0.016970786504633,
+    "failure_probability_weight_above_one": 0.015018961036035,
+    "maximum_joint_distribution_difference": 0.023174527489062
+  },
+  "logical_error_interpretation": "After recovery this is a logical Pauli-X mixture.  Its half-diamond distance from identity equals its total nonidentity mass: the maximally entangled input distinguishes its orthogonal Pauli branches.",
+  "phase_code": {
+    "classical_code_parameters": [
+      7,
+      4,
+      3
+    ],
+    "correctable_phase_error_weight": 1,
+    "error_patterns_checked": 128,
+    "key": "7 independent logical X-randomization bits",
+    "parity_check_matrix": [
+      [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "recovery_type": "Hamming syndrome, followed by its single-bit correction",
+    "stored_logical_qubits": 4
+  },
+  "physical_register": {
+    "coupling_pairs": [
+      [
+        0.9,
+        0.5
+      ],
+      [
+        0.88,
+        0.52
+      ],
+      [
+        0.86,
+        0.54
+      ],
+      [
+        0.84,
+        0.56
+      ],
+      [
+        0.82,
+        0.58
+      ],
+      [
+        0.8,
+        0.6
+      ],
+      [
+        0.78,
+        0.62
+      ]
+    ],
+    "delta": 0.2,
+    "dimensionless_time_t_delta_squared": 0.014,
+    "dual_rail_blocks": 7,
+    "g0": 0.7,
+    "logical_Z_generator_coefficients": [
+      0.4,
+      0.36,
+      0.32,
+      0.28,
+      0.24,
+      0.2,
+      0.16
+    ],
+    "physical_qubits": 14,
+    "time_and_gaussian_phase_variance": 0.35
+  },
+  "schema_version": 1,
+  "scope": "One finite correlated-noise construction with exhaustive Hamming syndrome recovery; not an all-size coding proof or converse."
+}
