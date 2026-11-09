@@ -48,6 +48,7 @@ The scientific consequence is a distinction between a small number of noise fiel
 
 | Question | Start here |
 |---|---|
+| How can I build up the ideas from Watrous's textbook? | [Learning route](learning/README.md), [source bridge](learning/watrous_bridge.md), and [30 milestones](learning/milestones.md) |
 | What does the result mean physically, and which limit matters? | [Interpretation and boundaries](science/interpretation.md) |
 | What resources and errors are being counted? | [Model](science/model.md) |
 | Why does uncalibrated lifetime stop growing with register size? | [Continuous coupling uncertainty](science/lifetime.md) |
@@ -57,6 +58,8 @@ The scientific consequence is a distinction between a small number of noise fiel
 | What can be reproduced computationally? | [Verification guide](verification/README.md) |
 
 The [science map](science/README.md) gives proof dependencies. [references.bib](references.bib) supplies the bibliography, and [llms.txt](llms.txt) maps reader questions to the authoritative files.
+
+The learning route uses one educational anchor: John Watrous, *The Theory of Quantum Information* (2018). Its 11 background milestones and 19 narrative milestones connect channel and information foundations to the physical storage problem, the constructions, and the limits of the results.
 
 ## Scope and reproducibility
 

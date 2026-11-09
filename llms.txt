@@ -7,6 +7,12 @@
 - [Repository overview](README.md): Main results, reading routes, scope, and contact.
 - [Scientific account](science/README.md): Organization and proof dependencies.
 
+## Study route
+
+- [Learning route](learning/README.md): A reader-independent path through the project, anchored in John Watrous, The Theory of Quantum Information (2018).
+- [Watrous source bridge](learning/watrous_bridge.md): Verified source sections, notation translation, a worked protected-subspace example, and the steps from textbook channels and information to this project's model and proofs.
+- [30 milestones](learning/milestones.md): Exactly M01–M30, with 11 background/preliminary targets and 19 narrative/innovation targets. Each records a central question, understanding target, dependencies, conceptual connection and source pointers.
+
 ## Scientific questions
 
 - [Operational model](science/model.md): Channel normalization, allowed endpoint operations, classical records, random keys, counted quantum carriers, calibration interface, and error criteria. Read this before transferring a theorem to a different noise or control model.

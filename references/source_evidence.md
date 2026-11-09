@@ -4,6 +4,7 @@ Comparison checked on 9 November 2026. A full text being available does not mean
 
 | Source | Primary text and inspected material | Limitation |
 |---|---|---|
+| Watrous (2018), educational anchor | [Official author page](https://jhwatrous.github.io/books-and-courses.html) and manuscript Chapters 1–6: the section, theorem, definition and proposition locators listed in the [source bridge](../learning/watrous_bridge.md#a-selective-route-through-watrous); Chapter 8 §8.2.1 for capacity terminology | Textbook foundations are distinguished from the local common-field, calibration and coding derivations; manuscript links are provided without redistributing the book |
 | Layden, Chen, Cappellaro (2020) | [arXiv manuscript](https://arxiv.org/pdf/1903.01046): common-fluctuator model, supplied-coupling construction, recovery axes, and main-text miscalibration discussion | Supplemental numerical robustness study not inspected |
 | Bacon, Lidar, Whaley (1999) | [arXiv manuscript](https://arxiv.org/pdf/quant-ph/9902041): perturbative stability proof, including the discarded second-order terms | All orders in time must not be read as all orders in perturbation strength |
 | Bartlett, Rudolph, Spekkens (2003) | [Primary manuscript](https://arxiv.org/abs/quant-ph/0302111): collective group action and asymptotic coding rates | Comparison concerns a known representation with an unknown common frame |
