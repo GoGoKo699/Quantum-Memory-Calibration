@@ -596,6 +596,27 @@ $$
 
 It remains valid for continuous variables, with mutual information defined by relative entropy of probability measures. If $J_X$ is infinite, the information bounds are vacuous. For finite $J_X$, quantum data processing also guarantees the needed support inclusion.
 
+For completeness, write $P$ and $Q$ for the two classical laws, and let $\omega_\theta(u)$ be the normalized, finite-dimensional decoded output of the common preparation map at label $u=(x,c,k)$. When $D(P\Vert Q)<\infty$, set $r=dP/dQ$. Then
+
+$$
+\rho_\theta=\int r(u)\omega_\theta(u)\,dQ(u),
+\qquad
+\sigma_\theta=\int\omega_\theta(u)\,dQ(u).
+$$
+
+Use the positive-operator extension $D_{\mathrm{rel}}(A\Vert B)=\operatorname{Tr}[A(\log_2A-\log_2B)]$, with the usual support and zero conventions. The integral form of joint convexity, obtained from finite mixtures by approximation and lower semicontinuity, gives
+
+$$
+\begin{aligned}
+D_{\mathrm{rel}}(\rho_\theta\Vert\sigma_\theta)
+&\le\int D_{\mathrm{rel}}(r(u)\omega_\theta(u)\Vert\omega_\theta(u))\,dQ(u)\\
+&=\int r(u)\log_2r(u)\,dQ(u)
+=D(P\Vert Q)=J_X.
+\end{aligned}
+$$
+
+This establishes the same comparison for general classical transcripts while the quantum output remains finite dimensional. It does not assign differential entropy to the transcript.
+
 The direct Bell test gives
 
 $$
