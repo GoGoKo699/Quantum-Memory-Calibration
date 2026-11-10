@@ -32,7 +32,7 @@ These distinctions also delimit the current result. It is not an optimal sensing
 
 [Buscemi, Chiribella, and D'Ariano (2005)](https://doi.org/10.1103/PhysRevLett.95.090501) analyze inversion of decoherence by measuring the environment and applying classical feedback. For a random-unitary realization they bound the entropy of the correction label below by the entropy exchange at the maximally mixed input; for qubit decoherence the minimum equals that entropy exchange. The information-cost interpretation of reversing a phase error is therefore established. Their record describes a realized error in a run and enables reversal of the full input. Here a pre-storage record describes the static generator, can select the encoded subspace, and remains useful for every later common phase without observing that phase.
 
-This distinction does not make the finite exact bound a new general information inequality. At a particular common phase, the two-valued profile acts as an independent Pauli phase key up to a fixed unitary. The bounds $D\leq M$ and $\log_2 D\leq I(S:C\mid K)$ then have the familiar interpretation that classical key information is required to recover entanglement. Their proof uses standard relative-entropy data processing and a maximally entangled-state test. Pair-parity advice provides an exact finite-size construction in the appropriate rate range.
+This distinction does not make the finite exact bound a new general information inequality. At a particular common phase, the two-valued profile acts as an independent Pauli phase key up to a fixed unitary. The bounds $`D\leq M`$ and $`\log_2 D\leq I(S:C\mid K)`$ then have the familiar interpretation that classical key information is required to recover entanglement. Their proof uses standard relative-entropy data processing and a maximally entangled-state test. Pair-parity advice provides an exact finite-size construction in the appropriate rate range.
 
 [Ilin and Pereg (2026)](https://arxiv.org/abs/2609.23459) study a closely related rate-limited helper resource in noisy quantum relay channels. Their primary abstract states that a relay observes information about the Pauli errors that occur, compresses the error sequence, and sends a bin index over a classical link to the receiver; matching capacity bounds are obtained for two models. Only that primary abstract was available for this comparison. No particular capacity formula or full-theorem subsumption claim is attributed to the paper here. Its realized-error record differs from reusable static-profile advice available before encoding, but a linear information/rate slope alone is not a sufficient distinction.
 
@@ -40,17 +40,17 @@ This distinction does not make the finite exact bound a new general information 
 
 ## Channel uncertainty, mixtures, and outage
 
-[Bjelaković, Boche, and Nötzel (2008)](https://doi.org/10.1103/PhysRevA.78.042331) derive capacities for compound quantum channels and, in Corollary IV.7, finite averaged channels of the form $\sum_i p_i\mathcal N_i^{\otimes n}$. Their [universal coding work](https://arxiv.org/abs/0811.4588) treats entanglement transmission and generation under channel uncertainty. Mixtures with a channel parameter held fixed across a block are therefore already part of quantum capacity theory. [Buscemi and Datta (2010)](https://doi.org/10.1109/TIT.2009.2039166) give one-shot bounds and information-spectrum capacity formulas for channel sequences with arbitrary correlations. The present model does not require a new general capacity framework.
+[Bjelaković, Boche, and Nötzel (2008)](https://doi.org/10.1103/PhysRevA.78.042331) derive capacities for compound quantum channels and, in Corollary IV.7, finite averaged channels of the form $`\sum_i p_i\mathcal N_i^{\otimes n}`$. Their [universal coding work](https://arxiv.org/abs/0811.4588) treats entanglement transmission and generation under channel uncertainty. Mixtures with a channel parameter held fixed across a block are therefore already part of quantum capacity theory. [Buscemi and Datta (2010)](https://doi.org/10.1109/TIT.2009.2039166) give one-shot bounds and information-spectrum capacity formulas for channel sequences with arbitrary correlations. The present model does not require a new general capacity framework.
 
-Indeed, in the signed model $g_0=0$, random local $X$ conjugations make the uncalibrated minimax problem equivalent to the exchangeable mixture
+Indeed, in the signed model $`g_0=0`$, random local $`X`$ conjugations make the uncalibrated minimax problem equivalent to the exchangeable mixture
 
-$$
+```math
 \mathbb E_{\theta}\bigl[\mathcal D_{\cos(2\delta\theta)}^{\otimes n}\bigr].
-$$
+```
 
 Its support contains channels arbitrarily close to complete dephasing. A fixed positive probability of such unfavorable phases obstructs vanishing error at positive rate. This is an outage mechanism. [Etxezarreta Martinez et al. (2022)](https://doi.org/10.1103/PhysRevA.105.012432) explicitly discuss quantum outage for decoherence parameters that fluctuate between blocks while remaining fixed within a block. Their work supplies useful operational context; the finite fidelity bounds here are proved directly and do not rely on a general outage formula from that paper.
 
-The binary result is consequently not a strong converse asserting that fidelity tends to zero above the information frontier. At weak fixed noise its obstructing Gaussian tail may be very small. The separate continuum theorem addresses fixed error: uncertainty over an interval produces a sinc attenuation under the converse prior, leading to a lifetime of order $\delta^{-2}$ at every fixed rate below one. Increasing register size cannot remove that obstruction within the stated passive model.
+The binary result is consequently not a strong converse asserting that fidelity tends to zero above the information frontier. At weak fixed noise its obstructing Gaussian tail may be very small. The separate continuum theorem addresses fixed error: uncertainty over an interval produces a sinc attenuation under the converse prior, leading to a lifetime of order $`\delta^{-2}`$ at every fixed rate below one. Increasing register size cannot remove that obstruction within the stated passive model.
 
 ## Scope of the resulting contribution
 

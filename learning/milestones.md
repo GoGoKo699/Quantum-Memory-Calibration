@@ -52,7 +52,7 @@ M01–M11 move from individual states and maps to the complete passive storage i
 
 **Central question.** What must a quantum memory preserve beyond the success of a few chosen input states?
 
-**Understanding target.** Explain the half-diamond error criterion and why it includes an arbitrary untouched reference. Relate it to the necessary condition $F_e\ge1-\epsilon$. Keep the project's pure-target overlap convention for $F_e$ distinct from Watrous's root-fidelity convention.
+**Understanding target.** Explain the half-diamond error criterion and why it includes an arbitrary untouched reference. Relate it to the necessary condition $`F_e\ge1-\epsilon`$. Keep the project's pure-target overlap convention for $`F_e`$ distinct from Watrous's root-fidelity convention.
 
 **Dependencies and story role.** Requires [M01] and [M02]. Establishes the operational success criterion before any converse or construction is assessed.
 
@@ -64,7 +64,7 @@ M01–M11 move from individual states and maps to the complete passive storage i
 
 **Central question.** How can a matrix eigenvalue bound control a channel acting on an arbitrary entangled input?
 
-**Understanding target.** Interpret $\mathcal A\le_{\mathrm{CP}}\mathcal B$ as complete positivity of their difference. Recognize dephasing as entrywise multiplication by a Schur matrix, use positivity of that matrix to test complete positivity, and connect its largest eigenvalue to comparison with complete dephasing.
+**Understanding target.** Interpret $`\mathcal A\le_{\mathrm{CP}}\mathcal B`$ as complete positivity of their difference. Recognize dephasing as entrywise multiplication by a Schur matrix, use positivity of that matrix to test complete positivity, and connect its largest eigenvalue to comparison with complete dephasing.
 
 **Dependencies and story role.** Requires [M02] and [M03]. Develops the channel comparison before applying it to unknown coupling profiles.
 
@@ -76,7 +76,7 @@ M01–M11 move from individual states and maps to the complete passive storage i
 
 **Central question.** What quantitative limitation follows once the stored register has become classical?
 
-**Understanding target.** Explain why complete dephasing leaves the reference separable from everything available to recovery, including classical encoder records. Obtain the target-overlap bound $1/D$ for a separable output and understand the related Schmidt-rank bound imposed by a finite quantum carrier.
+**Understanding target.** Explain why complete dephasing leaves the reference separable from everything available to recovery, including classical encoder records. Obtain the target-overlap bound $`1/D`$ for a separable output and understand the related Schmidt-rank bound imposed by a finite quantum carrier.
 
 **Dependencies and story role.** Requires [M01], [M02], and [M04]. Gives the operational meaning of the comparison channel prepared in [M05].
 
@@ -88,7 +88,7 @@ M01–M11 move from individual states and maps to the complete passive storage i
 
 **Central question.** Which information measure correctly charges a calibration record when free randomness is also available?
 
-**Understanding target.** Distinguish the hard cost $\log_2M$ from the conditional information $I(S:C\mid K)$. Explain why a masked transcript may have $I(S:C)=0$ while revealing the entire profile together with $K$, and why rare informative outcomes separate mean information from a hard alphabet bound.
+**Understanding target.** Distinguish the hard cost $`\log_2M`$ from the conditional information $`I(S:C\mid K)`$. Explain why a masked transcript may have $`I(S:C)=0`$ while revealing the entire profile together with $`K`$, and why rare informative outcomes separate mean information from a hard alphabet bound.
 
 **Dependencies and story role.** Requires [M01]. Defines the two resources before they enter different converse arguments.
 
@@ -112,13 +112,13 @@ M01–M11 move from individual states and maps to the complete passive storage i
 
 **Central question.** What does averaging controlled Pauli conjugations remove, and what can it leave intact?
 
-**Understanding target.** Use Pauli commutation signs to see why averaging $X$ conjugations removes cross terms between different diagonal Pauli operators. Distinguish a coherent error expansion from a stochastic Pauli mixture, and distinguish that mixture from a product distribution over sites.
+**Understanding target.** Use Pauli commutation signs to see why averaging $`X`$ conjugations removes cross terms between different diagonal Pauli operators. Distinguish a coherent error expansion from a stochastic Pauli mixture, and distinguish that mixture from a product distribution over sites.
 
 **Dependencies and story role.** Requires [M02], [M03], and [M07]. Establishes a reusable randomization mechanism; its common-field application is deferred to [M19].
 
 **Conceptual connection.** Endpoint randomness can simplify the error representation while preserving classical correlations among the resulting errors.
 
-**Sources.** Project: [the twirling derivation](../science/lifetime.md#randomization-yields-a-correlated-phase-error-distribution). Watrous: [§§4.1.1–4.1.2][W4] for mixtures of unitaries, Weyl operators, and their Fourier relations. The specific $X$-twirl calculation is supplied in the project.
+**Sources.** Project: [the twirling derivation](../science/lifetime.md#randomization-yields-a-correlated-phase-error-distribution). Watrous: [§§4.1.1–4.1.2][W4] for mixtures of unitaries, Weyl operators, and their Fourier relations. The specific $`X`$-twirl calculation is supplied in the project.
 
 ### M10. Coherent correction from classical codes
 
@@ -152,7 +152,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** Why do binary and interval uncertainty produce different attenuation functions at the same fixed field phase?
 
-**Understanding target.** Obtain the conditional cosine attenuation from two possible couplings and the sinc attenuation from a uniform interval. Track the factor of two from the eigenvalues of $Z$ and separate the known center rotation. Explain why conditional product form does not make the phase-averaged register memoryless.
+**Understanding target.** Obtain the conditional cosine attenuation from two possible couplings and the sinc attenuation from a uniform interval. Track the factor of two from the eigenvalues of $`Z`$ and separate the known center rotation. Explain why conditional product form does not make the phase-averaged register memoryless.
 
 **Dependencies and story role.** Requires [M03], [M07], and [M11]. Turns the physical uncertainty into the channel objects needed by both converse branches.
 
@@ -164,7 +164,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** How does one conditional channel estimate constrain every allowed encoding and recovery?
 
-**Understanding target.** Combine the Schur eigenvalue $(1+|\lambda|)^n$ with the separable overlap bound to obtain conditional profile-averaged fidelity at most $(1+|\lambda|)^n/D$, capped at one. Explain why arbitrary mixed encoders, physical probes, classical records, and joint recovery remain covered. Keep the independent carrier-dimension ceiling visible.
+**Understanding target.** Combine the Schur eigenvalue $`(1+|\lambda|)^n`$ with the separable overlap bound to obtain conditional profile-averaged fidelity at most $`(1+|\lambda|)^n/D`$, capped at one. Explain why arbitrary mixed encoders, physical probes, classical records, and joint recovery remain covered. Keep the independent carrier-dimension ceiling visible.
 
 **Dependencies and story role.** Requires [M04]–[M06] and [M12]. Converts local attenuation into the common arbitrary-code converse ingredient.
 
@@ -174,9 +174,9 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 ### M14. Counting calibration-selected codes
 
-**Central question.** How much can a transcript with $M$ possible values improve the conditional fidelity bound?
+**Central question.** How much can a transcript with $`M`$ possible values improve the conditional fidelity bound?
 
-**Understanding target.** Follow the inequality $P(c\mid s,k)\le1$ and the sum over possible endpoint codes. Explain why it permits stochastic transcripts, nonlinear compressed features of the entire profile, and a free independent key, yielding an $M$ factor without assuming that advice reveals individual coefficients.
+**Understanding target.** Follow the inequality $`P(c\mid s,k)\le1`$ and the sum over possible endpoint codes. Explain why it permits stochastic transcripts, nonlinear compressed features of the entire profile, and a free independent key, yielding an $`M`$ factor without assuming that advice reveals individual coefficients.
 
 **Dependencies and story role.** Requires [M07], [M11], and [M13]. Supplies the hard-alphabet converse shared by the binary and continuous models.
 
@@ -188,7 +188,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** How can one charge noisy or continuous advice without counting its possible values?
 
-**Understanding target.** Compare the actual law $P_KP_SP_{C|S,K}$ with $P_KP_SP_{C|K}$ while keeping the endpoint maps identical. Use data processing and a Bell test to obtain the direct information bound, and understand the additive form obtained through the separable comparison. Explain why the correct cost remains conditional on $K$.
+**Understanding target.** Compare the actual law $`P_KP_SP_{C|S,K}`$ with $`P_KP_SP_{C|K}`$ while keeping the endpoint maps identical. Use data processing and a Bell test to obtain the direct information bound, and understand the additive form obtained through the separable comparison. Explain why the correct cost remains conditional on $`K`$.
 
 **Dependencies and story role.** Requires [M07], [M08], and [M13]. Builds the second converse route and the generic lemma reused in the lifetime analysis.
 
@@ -200,7 +200,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** How can a limited calibrated subset carry a quantum payload for every later field realization?
 
-**Understanding target.** For $g_0=0$, conjugate the revealed negative-sign sites by $X$ to turn the selected generator into a uniform collective $Z$ sum, then choose an exact constant-magnetization code. Count its dimension and the logarithmic encoding overhead. For two positive coupling values, use separate fixed-magnetization sectors in the two known classes rather than applying the signed-model $X$ homogenization.
+**Understanding target.** For $`g_0=0`$, conjugate the revealed negative-sign sites by $`X`$ to turn the selected generator into a uniform collective $`Z`$ sum, then choose an exact constant-magnetization code. Count its dimension and the logarithmic encoding overhead. For two positive coupling values, use separate fixed-magnetization sectors in the two known classes rather than applying the signed-model $`X`$ homogenization.
 
 **Dependencies and story role.** Requires [M03], [M11], and [M12]. Provides the exact constructive ingredient that will attain the calibration frontier.
 
@@ -212,7 +212,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** Can one calibration bit protect one logical qubit without revealing two individual coupling signs?
 
-**Understanding target.** Follow the parity-selected two-qubit code and its tensor-product extension. Explain the exact bounds $D\le M$ and $\log_2D\le I(S:C\mid K)$, and their saturation with $D=M=2^B$ for integer $B\ge0$, $g_0=0$, and $n\ge2B$. Distinguish the continuity/full-Gaussian-support argument for perfect fidelity from the later positive-probability error-floor argument.
+**Understanding target.** Follow the parity-selected two-qubit code and its tensor-product extension. Explain the exact bounds $`D\le M`$ and $`\log_2D\le I(S:C\mid K)`$, and their saturation with $`D=M=2^B`$ for integer $`B\ge0`$, $`g_0=0`$, and $`n\ge2B`$. Distinguish the continuity/full-Gaussian-support argument for perfect fidelity from the later positive-probability error-floor argument.
 
 **Dependencies and story role.** Requires [M12], [M14], [M15], and [M16]. Gives a finite matching example of compressed calibration before the asymptotic theorem is assembled.
 
@@ -224,7 +224,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** What protection is available when the center of an uncertainty interval is known but its individual deviations are not?
 
-**Understanding target.** Choose computational-basis vectors of fixed Hamming weight so that the $g_0$ term becomes scalar. Explain exact invariance under every allowed diagonal generator and bound the residual block generator by $m\delta$. Relate this to a block half-diamond error bounded by $tm^2\delta^2$.
+**Understanding target.** Choose computational-basis vectors of fixed Hamming weight so that the $`g_0`$ term becomes scalar. Explain exact invariance under every allowed diagonal generator and bound the residual block generator by $`m\delta`$. Relate this to a block half-diamond error bounded by $`tm^2\delta^2`$.
 
 **Dependencies and story role.** Requires [M03], [M04], [M11], and [M16]. Begins the uncalibrated lifetime construction with a local block that requires no profile transcript.
 
@@ -236,7 +236,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** How can an outer code give a uniform guarantee when all inner blocks share the same fluctuating phase?
 
-**Understanding target.** Apply [M09] to the invariant inner blocks and retain the resulting correlated distribution of phase-error strings. Define the number $W$ of erroneous blocks, obtain its first-moment bound, and combine a phase-code correction threshold with Markov's inequality. Explain why no factorization or independence assumption is used.
+**Understanding target.** Apply [M09] to the invariant inner blocks and retain the resulting correlated distribution of phase-error strings. Define the number $`W`$ of erroneous blocks, obtain its first-moment bound, and combine a phase-code correction threshold with Markov's inequality. Explain why no factorization or independence assumption is used.
 
 **Dependencies and story role.** Requires [M09], [M10], and [M18]. Supplies the global recovery mechanism for the lifetime lower bound.
 
@@ -248,7 +248,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** What becomes possible when the actual coupling profile may determine the encoder?
 
-**Understanding target.** Bound the channel error on a spectral interval of width $w$ by $tw^2/4$. Use spectral occupancy to obtain a large code for every supplied bounded profile, and identify the subexponential condition under which its rate approaches one. Recognize this as an inherited calibrated baseline.
+**Understanding target.** Bound the channel error on a spectral interval of width $`w`$ by $`tw^2/4`$. Use spectral occupancy to obtain a large code for every supplied bounded profile, and identify the subexponential condition under which its rate approaches one. Recognize this as an inherited calibrated baseline.
 
 **Dependencies and story role.** Requires [M03], [M04], and [M11]. Builds the comparison construction before contrasting it with the universal-code bounds.
 
@@ -260,7 +260,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** How precise must a finite coefficient description be for the spectral code to remain useful?
 
-**Understanding target.** Track how coordinate errors bounded by $\eta$ can enlarge a code's spectral interval by at most $2n\eta$. Connect the resulting precision requirement to a finite transcript alphabet, and keep one common payload dimension for every transcript. Recognize the rounding scheme as sufficient without assuming it is optimal.
+**Understanding target.** Track how coordinate errors bounded by $`\eta`$ can enlarge a code's spectral interval by at most $`2n\eta`$. Connect the resulting precision requirement to a finite transcript alphabet, and keep one common payload dimension for every transcript. Recognize the rounding scheme as sufficient without assuming it is optimal.
 
 **Dependencies and story role.** Requires [M07], [M14], and [M20]. Makes the supplied-profile comparison concrete within the classical calibration interface.
 
@@ -272,7 +272,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** Why can a rare phase event obstruct vanishing error without preventing useful fixed-error storage?
 
-**Understanding target.** Identify intervals where the conditional binary-profile channel is near complete dephasing. Explain their positive Gaussian probability and the uniform lower bound when $t_n\delta_n^2$ stays above a positive constant. Distinguish a nonzero error floor from fidelity tending to zero and explain why shrinking phase variance is a different limit.
+**Understanding target.** Identify intervals where the conditional binary-profile channel is near complete dephasing. Explain their positive Gaussian probability and the uniform lower bound when $`t_n\delta_n^2`$ stays above a positive constant. Distinguish a nonzero error floor from fidelity tending to zero and explain why shrinking phase variance is a different limit.
 
 **Dependencies and story role.** Requires [M12]–[M15]. Converts the conditional converse bounds into the asymptotic obstruction needed for the calibration frontier.
 
@@ -284,7 +284,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** Why does the reliable storage rate equal the calibration-information rate, capped at one?
 
-**Understanding target.** Combine the hard-alphabet or information converse with the exact subset construction and the physical carrier bound to obtain $Q_{\mathrm{cal}}(b)=\min\{b,1\}$. State the worst-profile, vanishing-error, classical-transcript, and positive-noise hypotheses. Explain why the same asymptotic frontier holds for both advice budgets and for two positive coupling values.
+**Understanding target.** Combine the hard-alphabet or information converse with the exact subset construction and the physical carrier bound to obtain $`Q_{\mathrm{cal}}(b)=\min\{b,1\}`$. State the worst-profile, vanishing-error, classical-transcript, and positive-noise hypotheses. Explain why the same asymptotic frontier holds for both advice budgets and for two positive coupling values.
 
 **Dependencies and story role.** Requires [M14], [M15], [M16], and [M22], with the carrier bound from [M13]. This is the first global synthesis of the converse and construction branches.
 
@@ -296,7 +296,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** Why does independent interval uncertainty prevent a fixed-error lifetime from growing with register size at positive rate?
 
-**Understanding target.** Split the common-phase integral into a small interval and its complement. Use sinc decay outside that interval and the Gaussian mass inside it to obtain the finite bound governed by $(t\delta^2)^{-1/2}$ and an exponentially small term. Translate average fidelity into a worst-profile obstruction.
+**Understanding target.** Split the common-phase integral into a small interval and its complement. Use sinc decay outside that interval and the Gaussian mass inside it to obtain the finite bound governed by $`(t\delta^2)^{-1/2}`$ and an exponentially small term. Translate average fidelity into a worst-profile obstruction.
 
 **Dependencies and story role.** Requires [M12], [M13], and [M14]. Assembles the continuous-profile upper bound from the common converse machinery.
 
@@ -308,7 +308,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** How do the converse and correlated-error construction establish the same lifetime scale?
 
-**Understanding target.** Fix $0<R<1$ and $0<\epsilon<1$, then choose the inner block size, outer correction fraction, and sufficiently large register size in that order. Combine the construction with the upper bound to obtain $T_{R,\epsilon}^{(n)}(\delta)=\Theta_{R,\epsilon}(\delta^{-2})$. Explain the uniformity in $g_0$ and $\delta$ without asserting uniform constants as $R\to1$ or $\epsilon\to0$.
+**Understanding target.** Fix $`0\lt R<1`$ and $`0<\epsilon<1`$, then choose the inner block size, outer correction fraction, and sufficiently large register size in that order. Combine the construction with the upper bound to obtain $`T_{R,\epsilon}^{(n)}(\delta)=\Theta_{R,\epsilon}(\delta^{-2})`$. Explain the uniformity in $`g_0`$ and $`\delta`$ without asserting uniform constants as $`R\to1`$ or $`\epsilon\to0`$.
 
 **Dependencies and story role.** Requires [M18], [M19], and [M24]. Completes the fixed-error theorem and its quantifiers.
 
@@ -320,7 +320,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** What calibration information becomes necessary if the storage time grows beyond the uncertainty scale?
 
-**Understanding target.** For $t_n\delta_n^2\to\infty$, distinguish the hard-budget necessity $B_n\ge\log_2D_n-o(n)$ at fidelity bounded away from zero from the information-budget necessity $I(\boldsymbol G:C\mid K)\ge(1-\epsilon)\log_2D_n-o(n)$ at fixed error. Explain the entropy averaging in the latter and why neither condition alone is an optimal sufficiency statement for continuous profiles.
+**Understanding target.** For $`t_n\delta_n^2\to\infty`$, distinguish the hard-budget necessity $`B_n\ge\log_2D_n-o(n)`$ at fidelity bounded away from zero from the information-budget necessity $`I(\boldsymbol G:C\mid K)\ge(1-\epsilon)\log_2D_n-o(n)`$ at fixed error. Explain the entropy averaging in the latter and why neither condition alone is an optimal sufficiency statement for continuous profiles.
 
 **Dependencies and story role.** Requires [M15], [M21], [M24], and [M25]. Extends the time-scale comparison into an information-resource consequence.
 
@@ -344,7 +344,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** Why does the passive no-calibration frontier not apply after ideal controls are inserted during storage?
 
-**Understanding target.** Follow the Walsh-sign toggling calculation under the same Markov white-noise model. Explain how orthogonal temporal patterns remove the unknown signs and produce independent dephasing with attenuation $e^{-2t\delta^2}$. Identify the growing number of control intervals, the fixed-finite-time positive coding rate, and the distinction from a frozen quasistatic field.
+**Understanding target.** Follow the Walsh-sign toggling calculation under the same Markov white-noise model. Explain how orthogonal temporal patterns remove the unknown signs and produce independent dephasing with attenuation $`e^{-2t\delta^2}`$. Identify the growing number of control intervals, the fixed-finite-time positive coding rate, and the distinction from a frozen quasistatic field.
 
 **Dependencies and story role.** Requires [M03], [M09]–[M11], [M23], and [M25]. Tests the physical importance of the passive-interface assumption with an explicit changed task.
 
@@ -368,7 +368,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** What has the combined theory established about access to collective-noise protection, and what precise question remains open?
 
-**Understanding target.** Explain the fixed-error lifetime theorem and exact binary calibration frontier as complementary consequences of the passive interface. Identify the inherited Schur comparison, spectral occupancy, and protected-block methods separately from the resource-sensitive conclusions. State the unresolved continuous-profile gap: for fixed $g_0$ and $\delta>0$, diverging polynomial storage times, and inverse-polynomial error, the proved costs are linear necessary hard advice and an $O(n\log n)$ sufficient rounding budget. Neither bound is claimed optimal in this regime.
+**Understanding target.** Explain the fixed-error lifetime theorem and exact binary calibration frontier as complementary consequences of the passive interface. Identify the inherited Schur comparison, spectral occupancy, and protected-block methods separately from the resource-sensitive conclusions. State the unresolved continuous-profile gap: for fixed $`g_0`$ and $`\delta>0`$, diverging polynomial storage times, and inverse-polynomial error, the proved costs are linear necessary hard advice and an $`O(n\log n)`$ sufficient rounding budget. Neither bound is claimed optimal in this regime.
 
 **Dependencies and story role.** Integrates [M23]–[M29]. Completes the route from elementary channel objects to the project's physical consequence and remaining boundary.
 
