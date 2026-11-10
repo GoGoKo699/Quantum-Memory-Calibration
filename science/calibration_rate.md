@@ -52,14 +52,15 @@ The guarantee is not required separately for every key or calibration outcome. S
 
 For the converse, put the uniform prior on the static vector $`S`$. This prior does not replace the worst-profile task by a different noise model: a uniform guarantee must also hold after this average. We use two distinct calibration costs.
 
-* **Hard-bit cost.** For each fixed key $`k`$, the transcript has at most $`M`$ possible values. Its cost is $`B=\log_2M`$.
-* **Information cost.** The cost is
+**Hard-bit cost.** For each fixed key $`k`$, the transcript has at most $`M`$ possible values. Its cost is $`B=\log_2M`$.
 
-  ```math
-  J=I(S:C\mid K).
-  ```
+**Information cost.** The cost is
 
-  This is the information acquired about the uniform spatial profile, measured in bits. The alphabet of $`C`$ need not be finite.
+```math
+J=I(S:C\mid K).
+```
+
+This is the information acquired about the uniform spatial profile, measured in bits. The alphabet of $`C`$ need not be finite.
 
 The conditioning on $`K`$ is essential. Identify the sign vector with its binary label. If $`K`$ is a uniform independent $`n`$-bit string and $`C=S\oplus K`$, then $`I(S:C)=0`$, although the endpoints recover all of $`S`$ from $`(C,K)`$. The correct cost is $`I(S:C\mid K)=n`$.
 
