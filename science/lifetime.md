@@ -193,7 +193,7 @@ x_s=\frac1{2(2^{s/2}-1)}.
 For $`|X|\ge x_s`$, the inequality $`|\mathrm{sinc}(2X)|\le1/(2|X|)`$ makes the integrand at most $`2^{-sn/2}`$. On the remaining interval use the bound one and
 
 ```math
-\Pr(|X|\lt x_s)\le\sqrt{\frac2\pi}\frac{x_s}{\sqrt\tau}.
+\Pr(|X|\lt x_s)\le\sqrt{2/\pi}\frac{x_s}{\sqrt\tau}.
 ```
 
 If $`\log_2D\ge Rn`$ and $`B=0`$, the same expression with $`s=R`$ is valid. A uniform error bound $`e_{\boldsymbol g,t}\le\epsilon`$ therefore gives, whenever $`2^{-Rn/2}<1-\epsilon`$,
