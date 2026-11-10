@@ -17,7 +17,7 @@ concurrency:
 jobs:
   capture:
     if: github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     env:
       CAPTURE_REVISION: ${{ github.event.pull_request.head.sha }}
@@ -30,7 +30,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: '20'
+          node-version: '22'
       - name: Install the capture runtime
         run: |
           npm install --prefix "$RUNNER_TEMP/math-runtime" playwright@1.56.1 mathjax-full@3.2.1
