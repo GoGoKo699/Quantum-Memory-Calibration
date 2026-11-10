@@ -98,14 +98,14 @@ $$
 \begin{aligned}
 \Phi^{\mathrm{ctrl}}_{s,t}
 &=\exp\left[-\frac{t}{2M}\sum_{\ell=1}^M
-\operatorname{ad}_{A_{s,\ell}}^2\right]\\
+\mathrm{ad}_{A_{s,\ell}}^2\right]\\
 &=\exp\left[-\frac{t\delta^2}{2}\sum_{j=1}^n
-\operatorname{ad}_{Z_j}^2\right]
+\mathrm{ad}_{Z_j}^2\right]
 =\mathcal D_{e^{-2t\delta^2}}^{\otimes n},
 \end{aligned}
 $$
 
-where $\operatorname{ad}_A(B)=[A,B]$. The unknown signs disappear, and the resulting independent phase-flip probability is
+where $\mathrm{ad}_A(B)=[A,B]$. The unknown signs disappear, and the resulting independent phase-flip probability is
 
 $$
 p=\frac{1-e^{-2t\delta^2}}2<\frac12

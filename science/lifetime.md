@@ -26,11 +26,11 @@ For a protocol storing a $D$-dimensional payload, write $\mathcal M_{\boldsymbol
 
 $$
 e_{\boldsymbol g,t}
-=\frac12\|\mathcal M_{\boldsymbol g,t}-\operatorname{id}_D\|_\diamond,
+=\frac12\|\mathcal M_{\boldsymbol g,t}-\mathrm{id}_D\|_\diamond,
 \qquad
 F_e(\boldsymbol g,t)
 =\langle\Phi_D|
-(\operatorname{id}\otimes\mathcal M_{\boldsymbol g,t})(\Phi_D)
+(\mathrm{id}\otimes\mathcal M_{\boldsymbol g,t})(\Phi_D)
 |\Phi_D\rangle.
 $$
 
@@ -98,19 +98,19 @@ Conditional on $\theta$, averaging the profile gives
 
 $$
 \mathcal N_\theta
-=\operatorname{Ad}_{U_{0,\theta}^{\otimes n}}
+=\mathrm{Ad}_{U_{0,\theta}^{\otimes n}}
 \circ\mathcal D_{\lambda(\theta)}^{\otimes n},
 \qquad
 U_{0,\theta}=e^{-ig_0\theta Z},
 \qquad
-\lambda(\theta)=\operatorname{sinc}(2\delta\theta),
+\lambda(\theta)=\mathrm{sinc}(2\delta\theta),
 $$
 
-where $\operatorname{sinc}(x)=\sin(x)/x$ for $x\ne0$ and $\operatorname{sinc}(0)=1$. The channel $\mathcal D_\lambda$ preserves diagonal entries and multiplies off-diagonal entries by $\lambda$. The scalar characteristic-function calculation is
+where $\mathrm{sinc}(x)=\sin(x)/x$ for $x\ne0$ and $\mathrm{sinc}(0)=1$. The channel $\mathcal D_\lambda$ preserves diagonal entries and multiplies off-diagonal entries by $\lambda$. The scalar characteristic-function calculation is
 
 $$
 \mathbb E_G e^{-2i\theta G}
-=e^{-2ig_0\theta}\operatorname{sinc}(2\delta\theta).
+=e^{-2ig_0\theta}\mathrm{sinc}(2\delta\theta).
 $$
 
 ### Comparison with complete dephasing
@@ -135,7 +135,7 @@ Complete dephasing destroys entanglement between the stored register and an unto
 Consequently, any fixed endpoint code has conditional average fidelity at most
 
 $$
-\min\left\{1,\frac{(1+|\operatorname{sinc}(2\delta\theta)|)^n}{D}\right\}.
+\min\left\{1,\frac{(1+|\mathrm{sinc}(2\delta\theta)|)^n}{D}\right\}.
 $$
 
 The statement includes arbitrary joint recovery and any physical qubits reserved as probes.
@@ -149,7 +149,7 @@ $$
 \mathbb E_{\boldsymbol G}\sum_c
 p(c|\boldsymbol G)f_c(\boldsymbol G,\theta)
 &\le\sum_c\mathbb E_{\boldsymbol G}f_c(\boldsymbol G,\theta)\\
-&\le\frac{M(1+|\operatorname{sinc}(2\delta\theta)|)^n}{D}.
+&\le\frac{M(1+|\mathrm{sinc}(2\delta\theta)|)^n}{D}.
 \end{aligned}
 $$
 
@@ -160,7 +160,7 @@ $$
 \overline F_e
 \le\mathbb E_{\theta\sim N(0,t)}
 \min\left\{1,
-\frac{M(1+|\operatorname{sinc}(2\delta\theta)|)^n}{D}
+\frac{M(1+|\mathrm{sinc}(2\delta\theta)|)^n}{D}
 \right\}.}
 $$
 
@@ -190,7 +190,7 @@ $$
 x_s=\frac1{2(2^{s/2}-1)}.
 $$
 
-For $|X|\ge x_s$, the inequality $|\operatorname{sinc}(2X)|\le1/(2|X|)$ makes the integrand at most $2^{-sn/2}$. On the remaining interval use the bound one and
+For $|X|\ge x_s$, the inequality $|\mathrm{sinc}(2X)|\le1/(2|X|)$ makes the integrand at most $2^{-sn/2}$. On the remaining interval use the bound one and
 
 $$
 \Pr(|X|<x_s)\le\sqrt{\frac2\pi}\frac{x_s}{\sqrt\tau}.
@@ -242,12 +242,12 @@ $$
 Because $\|\mathcal L_{B_b}\|_\diamond\le2\|B_b\|^2$ and a channel has diamond norm one, the integral identity for the semigroup gives
 
 $$
-\frac12\|\Psi_{b,t}-\operatorname{id}\|_\diamond
+\frac12\|\Psi_{b,t}-\mathrm{id}\|_\diamond
 \le t\|B_b\|^2
 \le tm^2\delta^2.
 $$
 
-This estimate holds for all $t\ge0$. The complete inner-register channel is still correlated: it is the average over one $\theta$ of $\bigotimes_b\operatorname{Ad}_{e^{-i\theta B_b}}$.
+This estimate holds for all $t\ge0$. The complete inner-register channel is still correlated: it is the average over one $\theta$ of $\bigotimes_b\mathrm{Ad}_{e^{-i\theta B_b}}$.
 
 ### Randomization yields a correlated phase-error distribution
 
@@ -269,7 +269,7 @@ These probabilities need not factor across blocks. Let $W(z)$ count the blocks w
 
 $$
 \Pr(z_b\ne0)=1-F_e(\Psi_{b,t})
-\le\frac12\|\Psi_{b,t}-\operatorname{id}\|_\diamond
+\le\frac12\|\Psi_{b,t}-\mathrm{id}\|_\diamond
 \le tm^2\delta^2.
 $$
 
@@ -316,7 +316,7 @@ The corrected part of the phase-error mixture is the identity channel. Every oth
 
 $$
 \begin{aligned}
-\frac12\|\mathcal M_{\boldsymbol g,t}-\operatorname{id}\|_\diamond
+\frac12\|\mathcal M_{\boldsymbol g,t}-\mathrm{id}\|_\diamond
 &\le\Pr(W>w)\\
 &\le\frac{\mathbb EW}{w+1}\\
 &\le\frac{tm^2\delta^2}{\alpha}.
@@ -356,7 +356,7 @@ $$
 I_n=I(\boldsymbol G;C\mid K),
 \qquad
 J(\tau)=\mathbb E_{Z\sim N(0,1)}
-\log_2\left(1+|\operatorname{sinc}(2\sqrt\tau Z)|\right),
+\log_2\left(1+|\mathrm{sinc}(2\sqrt\tau Z)|\right),
 $$
 
 where $K$ is independent of $\boldsymbol G$. The calibration comparison lemma in [Appendix B of the rate analysis](calibration_rate.md#appendix-b-a-calibration-comparison-lemma), applied at fixed $\theta$ with comparison factor $(1+|\lambda(\theta)|)^n$, gives
@@ -380,7 +380,7 @@ $$
 I_n\ge(1-\epsilon)\log_2D-1-nJ(t\delta^2).
 $$
 
-For every nonzero $Z$, $\operatorname{sinc}(2\sqrt\tau Z)\to0$ as $\tau\to\infty$. Its logarithmic contribution lies between zero and one, so dominated convergence gives $J(\tau)\to0$. Consequently, for $t_n\delta_n^2\to\infty$,
+For every nonzero $Z$, $\mathrm{sinc}(2\sqrt\tau Z)\to0$ as $\tau\to\infty$. Its logarithmic contribution lies between zero and one, so dominated convergence gives $J(\tau)\to0$. Consequently, for $t_n\delta_n^2\to\infty$,
 
 $$
 \boxed{I_n\ge(1-\epsilon)\log_2D_n-o(n).}

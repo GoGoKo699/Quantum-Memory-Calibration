@@ -36,6 +36,10 @@ One Gaussian phase drives all seven blocks. Gauss–Hermite quadrature of orders
 
 This example checks the part of the [lifetime construction](../science/lifetime.md) that must work with correlated block errors. The separate independent-noise calculation is a comparison, not a model substituted into the proof. This is a code for phase errors only, not a quantum code correcting every single-qubit error.
 
+## Hosted mathematics
+
+The separate [hosted-mathematics check](hosted_math/README.md) compares every mathematical expression in the proposed Git commit with the actual GitHub page at wide and narrow viewport sizes. It retains screenshots and a source-bound structural report. This detects presentation defects that local TeX compilation can miss; the captured screenshots still require visual inspection.
+
 ## What the checks do not certify
 
 Finite enumeration does not replace the relative-entropy proof, the arbitrary-code converse, or the asymptotic coding argument. Floating-point checks are not exact proofs of complete positivity. The results also do not certify a physical device, pulse implementation, or decoder runtime. The scientific assumptions and proofs remain the authoritative statements.

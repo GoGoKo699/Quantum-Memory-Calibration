@@ -12,7 +12,7 @@ $$
 A_{\boldsymbol g}=\sum_{j=1}^n g_jZ_j,
 \qquad
 \Phi_{\boldsymbol g,t}
-=\mathbb E_{\Theta\sim N(0,t)}\operatorname{Ad}_{e^{-i\Theta A_{\boldsymbol g}}}.
+=\mathbb E_{\Theta\sim N(0,t)}\mathrm{Ad}_{e^{-i\Theta A_{\boldsymbol g}}}.
 $$
 
 The register is passive during the storage interval. Arbitrary joint encoding and recovery are allowed at its endpoints, including classical records and independent shared randomness. Every quantum system retained across the interval counts among the noisy carriers. Calibration supplies a classical description of the fixed coupling profile before the payload arrives; it does not reveal the subsequent noise realization. [The model](science/model.md) specifies these resources and the worst-profile half-diamond error criterion.

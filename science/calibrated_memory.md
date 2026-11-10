@@ -24,11 +24,11 @@ $$
 \|\Psi_u\|_\diamond=1
 $$
 
-and $\Psi_t-\operatorname{id}=\int_0^t\mathcal L_B\Psi_u\,du$ imply
+and $\Psi_t-\mathrm{id}=\int_0^t\mathcal L_B\Psi_u\,du$ imply
 
 $$
 \boxed{
-\frac12\|\Psi_t-\operatorname{id}\|_\diamond
+\frac12\|\Psi_t-\mathrm{id}\|_\diamond
 \le t\|B\|^2\le\frac{tw^2}{4}.}
 $$
 

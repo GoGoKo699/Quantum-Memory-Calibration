@@ -44,7 +44,7 @@ $$
 =
 \sup_s
 \frac12\left\|
-\Lambda_s-\operatorname{id}_D
+\Lambda_s-\mathrm{id}_D
 \right\|_\diamond.
 $$
 
@@ -76,9 +76,9 @@ Let $\varphi_D$ denote the projector onto a maximally entangled state of the pay
 $$
 F_e(s)
 =
-\operatorname{Tr}\!\left[
+\mathrm{Tr}\!\left[
 \varphi_D
-(\operatorname{id}\otimes\Lambda_s)(\varphi_D)
+(\mathrm{id}\otimes\Lambda_s)(\varphi_D)
 \right],
 \qquad
 \overline F_e=2^{-n}\sum_s F_e(s).
@@ -249,7 +249,7 @@ Under the decorrelated law, the sign average can be taken separately for every s
 $$
 g(\theta)
 :=
-\operatorname{Tr}(\varphi_D\sigma_\theta)
+\mathrm{Tr}(\varphi_D\sigma_\theta)
 \le
 \min\{1,c_\theta/D\}.
 $$
@@ -475,13 +475,13 @@ $$
 For equal signs, use the pair code
 
 $$
-\operatorname{span}\{|01\rangle,|10\rangle\}.
+\mathrm{span}\{|01\rangle,|10\rangle\}.
 $$
 
 For opposite signs, use
 
 $$
-\operatorname{span}\{|00\rangle,|11\rangle\}.
+\mathrm{span}\{|00\rangle,|11\rangle\}.
 $$
 
 In both cases, the selected two-dimensional subspace is annihilated by
@@ -604,7 +604,7 @@ $$
 \sigma_\theta=\int\omega_\theta(u)\,dQ(u).
 $$
 
-Use the positive-operator extension $D_{\mathrm{rel}}(A\Vert B)=\operatorname{Tr}[A(\log_2A-\log_2B)]$, with the usual support and zero conventions. The integral form of joint convexity, obtained from finite mixtures by approximation and lower semicontinuity, gives
+Use the positive-operator extension $D_{\mathrm{rel}}(A\Vert B)=\mathrm{Tr}[A(\log_2A-\log_2B)]$, with the usual support and zero conventions. The integral form of joint convexity, obtained from finite mixtures by approximation and lower semicontinuity, gives
 
 $$
 \begin{aligned}
@@ -657,7 +657,7 @@ $$
 J_X+\mathbb E_\theta\log_2c_\theta.
 $$
 
-For interval uncertainty, $X=G$ and $c_\theta=(1+|\operatorname{sinc}(2\delta\theta)|)^n$. This is the form used in [the lifetime analysis](lifetime.md).
+For interval uncertainty, $X=G$ and $c_\theta=(1+|\mathrm{sinc}(2\delta\theta)|)^n$. This is the form used in [the lifetime analysis](lifetime.md).
 
 ## Appendix C. A uniform Gaussian bad-event bound
 

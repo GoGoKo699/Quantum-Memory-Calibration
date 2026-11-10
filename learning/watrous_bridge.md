@@ -10,7 +10,7 @@ This bridge selects the parts needed for the memory problem. It supplies the pro
 
 ## The memory task and its resource boundary
 
-Let $Z=\operatorname{diag}(1,-1)$. For $n$ physical qubits, the fixed spatial coupling profile $\boldsymbol g$ determines
+Let $Z=\mathrm{diag}(1,-1)$. For $n$ physical qubits, the fixed spatial coupling profile $\boldsymbol g$ determines
 
 $$
 A_{\boldsymbol g}=\sum_{j=1}^n g_jZ_j.
@@ -68,20 +68,20 @@ More explicitly, let
 $$
 |\Phi_D\rangle=\frac1{\sqrt D}\sum_{a=1}^D|a\rangle|a\rangle,
 \qquad \varphi_D=|\Phi_D\rangle\langle\Phi_D|,
-\qquad \rho_\Lambda=(\operatorname{id}\otimes\Lambda)(\varphi_D).
+\qquad \rho_\Lambda=(\mathrm{id}\otimes\Lambda)(\varphi_D).
 $$
 
 Then
 
 $$
-F_e(\Lambda)=\operatorname{Tr}(\varphi_D\rho_\Lambda)
+F_e(\Lambda)=\mathrm{Tr}(\varphi_D\rho_\Lambda)
 =F_{\text{Watrous}}(\varphi_D,\rho_\Lambda)^2.
 $$
 
 The test with outcomes $\{\varphi_D,I-\varphi_D\}$ accepts with probability $F_e$. If the half-diamond error of $\Lambda$ is at most $\epsilon$, the trace distance between these two reference–payload states is at most $\epsilon$. Their acceptance probabilities therefore differ by at most $\epsilon$, giving
 
 $$
-\frac12\|\Lambda-\operatorname{id}_D\|_\diamond\le\epsilon
+\frac12\|\Lambda-\mathrm{id}_D\|_\diamond\le\epsilon
 \quad\Longrightarrow\quad F_e(\Lambda)\ge1-\epsilon.
 $$
 
@@ -93,7 +93,7 @@ Finally, independent randomness is averaged before the operational norm:
 
 $$
 \epsilon=\sup_{\boldsymbol g}\frac12
-\|\Lambda_{\boldsymbol g}-\operatorname{id}_D\|_\diamond,
+\|\Lambda_{\boldsymbol g}-\mathrm{id}_D\|_\diamond,
 $$
 
 where $\Lambda_{\boldsymbol g}$ already includes the calibration outcomes and key. The construction guarantees this channel error. It does not assert the same bound separately for every random key.
@@ -160,8 +160,8 @@ For independent uniform interval coefficients $G_j\in[g_0-\delta,g_0+\delta]$,
 
 $$
 \mathbb E_{G_j}e^{-2iG_j\theta}
-=e^{-2ig_0\theta}\operatorname{sinc}(2\delta\theta),
-\qquad \operatorname{sinc}(x)=\frac{\sin x}{x},\quad \operatorname{sinc}(0)=1.
+=e^{-2ig_0\theta}\mathrm{sinc}(2\delta\theta),
+\qquad \mathrm{sinc}(x)=\frac{\sin x}{x},\quad \mathrm{sinc}(0)=1.
 $$
 
 The factor two is the eigenvalue difference of $Z$. In either case, conditional profile averaging produces a tensor product of one-qubit dephasing maps, composed with the center rotation when $g_0\ne0$. Write the real attenuation as $\lambda(\theta)$, equal to cosine or sinc as appropriate.
@@ -205,17 +205,17 @@ $$
 f(\theta)\le\min\{1,c_\theta/D\}.
 $$
 
-The classical-record qualification matters: $\Delta_n\otimes\operatorname{id}_X$ would not destroy all reference entanglement if $X$ were an unrestricted persistent quantum memory. [Appendix A of the calibration proof](../science/calibration_rate.md#appendix-a-classical-records-and-the-physical-carrier) gives the precise allowed-record argument.
+The classical-record qualification matters: $\Delta_n\otimes\mathrm{id}_X$ would not destroy all reference entanglement if $X$ were an unrestricted persistent quantum memory. [Appendix A of the calibration proof](../science/calibration_rate.md#appendix-a-classical-records-and-the-physical-carrier) gives the precise allowed-record argument.
 
 The Schur comparison as a memory converse is inherited from [Quantum-Spectral-Memory](https://github.com/GoGoKo699/Quantum-Spectral-Memory/blob/ee5dc0e5529c7775bfaeabb2a5e744c51eb9431d/science/spectral_law.md). The present use adds a profile-information bottleneck and its consequences for these coupling families.
 
 ## The continuous lifetime argument
 
-For interval uncertainty, write $\tau=t\delta^2$ and $Y=\delta\Theta\sim N(0,\tau)$. The conditional attenuation is $\lambda=\operatorname{sinc}(2Y)$. Without calibration, the comparison just proved gives
+For interval uncertainty, write $\tau=t\delta^2$ and $Y=\delta\Theta\sim N(0,\tau)$. The conditional attenuation is $\lambda=\mathrm{sinc}(2Y)$. Without calibration, the comparison just proved gives
 
 $$
 \overline F_e\le
-\mathbb E_Y\min\left\{1,\frac{(1+|\operatorname{sinc}(2Y)|)^n}{D}\right\}.
+\mathbb E_Y\min\left\{1,\frac{(1+|\mathrm{sinc}(2Y)|)^n}{D}\right\}.
 $$
 
 Here the bar includes the converse prior on fixed profiles. A uniform operational error at most $\epsilon$ requires $\overline F_e\ge1-\epsilon$.
@@ -228,7 +228,7 @@ $$
 |Y|\le\frac1{2(2^{s/2}-1)},
 $$
 
-the bound $|\operatorname{sinc}(2Y)|\le1/(2|Y|)$ makes the integrand at most $2^{-sn/2}$. The Gaussian density is everywhere at most $1/\sqrt{2\pi\tau}$. Its probability of the displayed interval is therefore at most $a_s/\sqrt\tau$, where
+the bound $|\mathrm{sinc}(2Y)|\le1/(2|Y|)$ makes the integrand at most $2^{-sn/2}$. The Gaussian density is everywhere at most $1/\sqrt{2\pi\tau}$. Its probability of the displayed interval is therefore at most $a_s/\sqrt\tau$, where
 
 $$
 a_s=\frac{\sqrt{2/\pi}}{2(2^{s/2}-1)}.
@@ -261,7 +261,7 @@ $$
 left and right multiplication bounds imply $\|\mathcal L_{B_b}\|_\diamond\le2\|B_b\|^2$. Integrating the semigroup derivative yields
 
 $$
-\frac12\|e^{t\mathcal L_{B_b}}-\operatorname{id}\|_\diamond
+\frac12\|e^{t\mathcal L_{B_b}}-\mathrm{id}\|_\diamond
 \le t\|B_b\|^2\le tm^2\delta^2.
 $$
 
@@ -371,11 +371,11 @@ $$
 The decorrelated law permits uniform sign averaging separately for every chosen code, so its target-test probability satisfies
 
 $$
-g(\theta)=\operatorname{Tr}(\varphi_D\sigma_\theta)
+g(\theta)=\mathrm{Tr}(\varphi_D\sigma_\theta)
 \le\min\{1,c_\theta/D\}.
 $$
 
-Let $f(\theta)=\operatorname{Tr}(\varphi_D\rho_\theta)$ be the actual probability. Applying the same two-outcome target test to both states is another channel. Data processing a second time gives
+Let $f(\theta)=\mathrm{Tr}(\varphi_D\rho_\theta)$ be the actual probability. Applying the same two-outcome target test to both states is another channel. Data processing a second time gives
 
 $$
 \mathcal I\ge d_2(f\Vert g)

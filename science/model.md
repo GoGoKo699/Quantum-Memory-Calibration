@@ -19,7 +19,7 @@ $$
 \left[e^{-i\Theta A_{\boldsymbol g}}\rho e^{i\Theta A_{\boldsymbol g}}\right].
 $$
 
-The last expression is the channel obtained by integrating one common Gaussian white-noise field. It does not assign an independently sampled phase to each qubit. The convention is $\operatorname{Var}(\Theta)=t$; thus $t\delta^2$ is dimensionless when $\delta$ is a coupling scale.
+The last expression is the channel obtained by integrating one common Gaussian white-noise field. It does not assign an independently sampled phase to each qubit. The convention is $\mathrm{Var}(\Theta)=t$; thus $t\delta^2$ is dimensionless when $\delta$ is a coupling scale.
 
 Two families isolate different aspects of calibration:
 
@@ -63,7 +63,7 @@ $$
 =\mathbb E_{K,C\mid\boldsymbol g,K}
 \left[
 \mathcal R_{C,K}\circ
-(\Phi_{\boldsymbol g,t}\otimes\operatorname{id}_X)
+(\Phi_{\boldsymbol g,t}\otimes\mathrm{id}_X)
 \circ\mathcal E_{C,K}
 \right].
 $$
@@ -77,7 +77,7 @@ The operational error is the worst-profile, reference-complete error of the aver
 $$
 \varepsilon(\Lambda)
 =\sup_{\boldsymbol g}\frac12
-\|\Lambda_{\boldsymbol g}-\operatorname{id}_L\|_\diamond.
+\|\Lambda_{\boldsymbol g}-\mathrm{id}_L\|_\diamond.
 $$
 
 The average over the protocol's randomness and calibration outcomes occurs *before* the diamond norm. This is the channel obtained when the protocol uses its classical records and finally discards them. The guarantee is uniform over the coupling profile and logical input; it is not a maximum over every random key or calibration outcome. The achievable lifetime proof uses this permitted randomization.
@@ -86,8 +86,8 @@ For a maximally entangled logical-reference state $\varphi_D$, define
 
 $$
 F_e(\Lambda_{\boldsymbol g})
-=\operatorname{Tr}\left[
-\varphi_D(\operatorname{id}\otimes\Lambda_{\boldsymbol g})(\varphi_D)
+=\mathrm{Tr}\left[
+\varphi_D(\mathrm{id}\otimes\Lambda_{\boldsymbol g})(\varphi_D)
 \right].
 $$
 
