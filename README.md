@@ -6,41 +6,41 @@ This repository studies a register coupled to one Gaussian dephasing field throu
 
 ## Main results
 
-For $n$ physical qubits, the coupling operator and storage channel are
+For $`n`$ physical qubits, the coupling operator and storage channel are
 
-$$
+```math
 A_{\boldsymbol g}=\sum_{j=1}^n g_jZ_j,
 \qquad
 \Phi_{\boldsymbol g,t}
-=\mathbb E_{\Theta\sim N(0,t)}\operatorname{Ad}_{e^{-i\Theta A_{\boldsymbol g}}}.
-$$
+=\mathbb E_{\Theta\sim N(0,t)}\mathrm{Ad}_{e^{-i\Theta A_{\boldsymbol g}}}.
+```
 
 The register is passive during the storage interval. Arbitrary joint encoding and recovery are allowed at its endpoints, including classical records and independent shared randomness. Every quantum system retained across the interval counts among the noisy carriers. Calibration supplies a classical description of the fixed coupling profile before the payload arrives; it does not reveal the subsequent noise realization. [The model](science/model.md) specifies these resources and the worst-profile half-diamond error criterion.
 
-**Fixed-error lifetime under interval uncertainty.** If every $g_j$ is unknown in $[g_0-\delta,g_0+\delta]$, then for any fixed rate $0<R<1$ and error tolerance $0<\epsilon<1$,
+**Fixed-error lifetime under interval uncertainty.** If every $`g_j`$ is unknown in $`[g_0-\delta,g_0+\delta]`$, then for any fixed rate $`0\lt R<1`$ and error tolerance $`0<\epsilon<1`$,
 
-$$
+```math
 T_{R,\epsilon}^{(n)}(\delta)=\Theta_{R,\epsilon}(\delta^{-2})
-$$
+```
 
-for all sufficiently large $n$, uniformly in $g_0$ and $\delta>0$. Increasing the register size cannot increase this uncalibrated positive-rate lifetime beyond a constant at fixed uncertainty. The upper bound covers every allowed endpoint protocol; a construction using fixed-magnetization inner blocks and classical phase-error coding proves the matching scaling. [Statement and proof](science/lifetime.md).
+for all sufficiently large $`n`$, uniformly in $`g_0`$ and $`\delta>0`$. Increasing the register size cannot increase this uncalibrated positive-rate lifetime beyond a constant at fixed uncertainty. The upper bound covers every allowed endpoint protocol; a construction using fixed-magnetization inner blocks and classical phase-error coding proves the matching scaling. [Statement and proof](science/lifetime.md).
 
-**Exact calibration-rate frontier for two coupling values.** For $g_j=g_0+\delta s_j$, $s_j\in\{-1,+1\}$, and noise strength $t\delta^2$ bounded away from zero, the reliable storage rate is
+**Exact calibration-rate frontier for two coupling values.** For $`g_j=g_0+\delta s_j`$, $`s_j\in\{-1,+1\}`$, and noise strength $`t\delta^2`$ bounded away from zero, the reliable storage rate is
 
-$$
+```math
 Q_{\mathrm{cal}}(b)=\min\{b,1\}.
-$$
+```
 
-Here $b$ is the asymptotic number of calibration bits per carrier, measured either by a hard transcript alphabet or by conditional mutual information under the uniform sign prior. The storage guarantee remains uniform over profiles. The converse gives a nonzero error floor above the frontier; exact decoherence-free codes attain it asymptotically. The theorem also covers two known positive coupling values. [Statement, information accounting, and constructions](science/calibration_rate.md).
+Here $`b`$ is the asymptotic number of calibration bits per carrier, measured either by a hard transcript alphabet or by conditional mutual information under the uniform sign prior. The storage guarantee remains uniform over profiles. The converse gives a nonzero error floor above the frontier; exact decoherence-free codes attain it asymptotically. The theorem also covers two known positive coupling values. [Statement, information accounting, and constructions](science/calibration_rate.md).
 
 **Supplied-profile comparison.** For known bounded couplings, spectral occupancy gives
 
-$$
+```math
 D\ge\frac{2^n}{1+nG\sqrt{t/\epsilon}},
 \qquad |g_j|\le G,
-$$
+```
 
-at half-diamond error at most $\epsilon$. The rate therefore approaches one for subexponential storage times and fixed error. This calibrated baseline is inherited from [Quantum-Spectral-Memory](https://github.com/GoGoKo699/Quantum-Spectral-Memory/blob/ee5dc0e5529c7775bfaeabb2a5e744c51eb9431d/science/spectral_law.md). An explicit rounding construction here supplies a finite-description counterpart, using $O(n\log n)$ calibration bits for polynomial times and inverse-polynomial error. [Proof and remaining cost gap](science/calibrated_memory.md).
+at half-diamond error at most $`\epsilon`$. The rate therefore approaches one for subexponential storage times and fixed error. This calibrated baseline is inherited from [Quantum-Spectral-Memory](https://github.com/GoGoKo699/Quantum-Spectral-Memory/blob/ee5dc0e5529c7775bfaeabb2a5e744c51eb9431d/science/spectral_law.md). An explicit rounding construction here supplies a finite-description counterpart, using $`O(n\log n)`$ calibration bits for polynomial times and inverse-polynomial error. [Proof and remaining cost gap](science/calibrated_memory.md).
 
 The scientific consequence is a distinction between a small number of noise fields and access to their protected subspaces. Independent uncertainty in an extensive spatial profile can prevent scalable passive storage even when the corresponding supplied-profile device supports it.
 
