@@ -60,7 +60,7 @@ The other block outcomes sum to one conditional on each phase, so this is the ma
 
 ```math
 1-P(I)\le\tfrac12\mathbb E(\lambda_x-\lambda_y)^2
-=\operatorname{Var}(\lambda_x)\le w^2.
+=\mathrm{Var}(\lambda_x)\le w^2.
 ```
 
 The last inequality uses the diameter bound $`2w`$. If $`W`$ counts affected blocks, then $`\mathbb E W\le Nw^2`$ by linearity, and
