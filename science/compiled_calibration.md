@@ -4,7 +4,7 @@ Does the minimum amount of calibration information also suffice when the encoder
 
 ## Statement
 
-Use the [passive storage model](model.md) with $`n`$ qubits, fixed $`g_j\in[g_0-\delta,g_0+\delta]`$, $`\delta>0`$, and a centered Gaussian field phase of variance $`t`$. Fix a logical rate $`0<R<1`$ and write $`\tau=t\delta^2`$. Suppose $`\tau\to\infty`$ and $`\log_2\tau=o(n)`$. For sufficiently large $`n`$, one can store $`\lceil Rn\rceil`$ logical qubits with error, uniformly over the coupling box, at most
+Use the [passive storage model](model.md) with $`n`$ qubits, fixed $`g_j\in[g_0-\delta,g_0+\delta]`$, $`\delta\gt 0`$, and a centered Gaussian field phase of variance $`t`$. Fix a logical rate $`0\lt R\lt 1`$ and write $`\tau=t\delta^2`$. Suppose $`\tau\to\infty`$ and $`\log_2\tau=o(n)`$. For sufficiently large $`n`$, one can store $`\lceil Rn\rceil`$ logical qubits with error, uniformly over the coupling box, at most
 
 ```math
 \frac12\|\Lambda_{\boldsymbol g}-\mathrm{id}\|_\diamond
@@ -66,7 +66,7 @@ The other block outcomes sum to one conditional on each phase, so this is the ma
 The last inequality uses the diameter bound $`2w`$. If $`W`$ counts affected blocks, then $`\mathbb E W\le Nw^2`$ by linearity, and
 
 ```math
-\Pr\{W>\lfloor N/u\rfloor\}
+\Pr\{W\gt \lfloor N/u\rfloor\}
 \le\frac{Nw^2}{\lfloor N/u\rfloor+1}\le w.
 ```
 
@@ -79,7 +79,7 @@ We need a binary code of rate approaching one and polynomial-time decoding for e
 Set $`s=\lceil\log_2(n+1)\rceil`$ and $`p=\lfloor\sqrt u\rfloor`$. Choose the smallest $`\ell\in[s,2s]`$ satisfying
 
 ```math
-2^{s-1}\sum_{j=0}^{\lfloor\ell/p\rfloor}\binom{\ell}{j}<2^\ell .
+2^{s-1}\sum_{j=0}^{\lfloor\ell/p\rfloor}\binom{\ell}{j}\lt 2^\ell .
 ```
 
 For sufficiently large $`n`$, such an $`\ell`$ exists and $`\ell/s\to1`$. Indeed, for $`p\ge2`$ the volume sum is at most $`2^{\ell h_2(1/p)}`$, with $`h_2(1/p)\to0`$. To construct the binary inner code of the concatenation, start with the zero subspace. At each of $`s`$ steps, take the first vector outside all radius-$`\lfloor\ell/p\rfloor`$ balls centered at the current subspace, and adjoin it as a generator. The inequality guarantees a choice. Each new nonzero sum has weight greater than $`\lfloor\ell/p\rfloor`$, so the resulting linear code corrects
@@ -92,7 +92,7 @@ errors per word. Search over $`2^\ell=O(n^2)`$ candidates during compilation and
 
 Group $`M`$ bits into $`P=\lfloor M/\ell\rfloor`$ binary codewords and set the leftover coordinates to zero in the classical code. Use a Reed–Solomon code at $`P`$ distinct points of $`\mathbb F_{2^s}`$ with dimension $`P-2e`$, where $`e=\lfloor T/(b+1)\rfloor`$. The field has more than $`n`$ points. When the bit error count is at most $`T`$, any wrongly decoded symbol costs at least $`b+1`$ bit errors, so at most $`e`$ symbols can be wrong. Reed–Solomon decoding corrects them all. One can construct the field by enumerating monic binary polynomials of degree $`s`$ with polynomial-time irreducibility tests. Standard [Welch–Berlekamp decoding](https://courses.csail.mit.edu/6.440/spring08/scribe/lec10.pdf) runs in polynomial time. Choose a fixed classical fallback for failures outside the guaranteed radius.
 
-For $`M=\Theta(n)`$, we have $`P>0`$ and $`e/P=O(u^{-1/2})`$ for large $`n`$ because $`b+1>\ell/(2p)`$. The concatenated code carries $`s(P-2e)=(1-o(1))M`$ bits. Its binary-linear encoding has a polynomial Clifford implementation.
+For $`M=\Theta(n)`$, we have $`P\gt 0`$ and $`e/P=O(u^{-1/2})`$ for large $`n`$ because $`b+1\gt \ell/(2p)`$. The concatenated code carries $`s(P-2e)=(1-o(1))M`$ bits. Its binary-linear encoding has a polynomial Clifford implementation.
 
 To use this outer code coherently, apply bitwise Hadamards after its binary-linear encoder. Undo these Hadamards at recovery after decoding the spectral bands. A phase error now shifts the binary codeword by a vector $`a`$. Let $`H`$ be a full-row-rank parity-check matrix of the complete binary code, including any fixed zero coordinates. Measure only the syndrome $`Ha`$, which is the same for every shifted encoded basis word. For each syndrome, choose a fixed representative $`v`$ satisfying $`Hv=Ha`$, and run the classical decoder on $`v`$. If $`a`$ has weight at most $`T`$, then $`v+a`$ is the unique decoded codeword. Correct by adding $`v+(v+a)=a`$ and invert the outer encoder. This recovery preserves all payload amplitudes and correlations with a reference. Finite linear algebra implements syndrome extraction, choice of representative and the remaining ideal endpoint operations. Any decoder fallback defines a channel outside the guaranteed error radius.
 
@@ -100,7 +100,7 @@ The averaged logical channel is the identity on every phase-error branch within 
 
 ## Calibration cost and comparison
 
-For any constant $`a\in(0,1)`$, choosing $`N=\lfloor an/m\rfloor`$ gives $`M=(a+o(1))n`$ and $`s(P-2e)=(a+o(1))n`$. Scan feasible $`N`$ and take the smallest with at least $`\lceil Rn\rceil`$ outer logical coordinates, using a fixed state for any surplus coordinates. Every feasible choice uses at least $`\lceil Rn\rceil`$ active carriers. For every fixed $`a>R`$, the scan can succeed with at most $`\lfloor an/m\rfloor`$ blocks for large $`n`$. Consequently $`Nm=Rn+o(n)`$.
+For any constant $`a\in(0,1)`$, choosing $`N=\lfloor an/m\rfloor`$ gives $`M=(a+o(1))n`$ and $`s(P-2e)=(a+o(1))n`$. Scan feasible $`N`$ and take the smallest with at least $`\lceil Rn\rceil`$ outer logical coordinates, using a fixed state for any surplus coordinates. Every feasible choice uses at least $`\lceil Rn\rceil`$ active carriers. For every fixed $`a\gt R`$, the scan can succeed with at most $`\lfloor an/m\rfloor`$ blocks for large $`n`$. Consequently $`Nm=Rn+o(n)`$.
 
 The transcript lists one of $`L`$ indices per active carrier. It has at most $`L^{Nm}`$ possible values, with hard budget
 
