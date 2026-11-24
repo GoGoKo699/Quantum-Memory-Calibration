@@ -1,6 +1,6 @@
 # Primary-source reading record
 
-Comparison checked on 9 November 2026. A full text being available does not mean that every result in it is used. The locators below identify the parts supporting [related_work.md](related_work.md). Bibliographic fields without verified metadata have been omitted from [references.bib](../references.bib).
+Initial comparison checked on 9 November 2026. Continuous-calibration comparisons added on 24 November 2026. A full text being available does not mean that every result in it is used. The locators below identify the parts supporting [related_work.md](related_work.md). Bibliographic fields without verified metadata have been omitted from [references.bib](../references.bib).
 
 | Source | Primary text and inspected material | Limitation |
 |---|---|---|

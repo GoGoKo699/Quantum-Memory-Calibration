@@ -10,7 +10,7 @@ Unknown coefficients change the encoding problem. One endpoint protocol must pro
 
 The uncertainty has $`n`$ independently variable coordinates. A low-dimensional uncertainty model, such as one unknown common scale multiplying an otherwise known profile, is a different task. The theorem does not replace that structured model by independent uncertainty or claim the same obstruction for it.
 
-## Two results with different error limits
+## Storage guarantees and their error limits
 
 | Result | Quantity held fixed | Asymptotic conclusion |
 |---|---|---|
@@ -18,6 +18,8 @@ The uncertainty has $`n`$ independently variable coordinates. A low-dimensional 
 | Continuous description cost | Fixed positive rate and error, with $`\tau=t\delta^2\to\infty`$ and $`\log_2\tau=o(n)`$ | Each logical qubit costs $`(1/2+o(1))\log_2\tau`$ hard bits. At tolerance $`\epsilon`$ the conditional mutual-information cost per logical qubit is $`((1-\epsilon)/2+o(1))\log_2\tau`$. |
 | Two-value calibration frontier | Dimensionless noise strength bounded away from zero; error required to vanish | Reliable logical rate equals the calibration-information rate, capped at one. |
 | Supplied-profile spectral code | Bounded couplings; storage time and error satisfying a subexponential condition | The retained rate approaches one. |
+
+### Two results with different error limits
 
 The lifetime result addresses a fixed operational tolerance. The binary frontier addresses arbitrarily reliable asymptotic storage. A nonzero but extremely rare event can obstruct the latter without being a practically important error at a chosen finite tolerance.
 
