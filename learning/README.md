@@ -6,7 +6,7 @@ The educational anchor is **John Watrous, *The Theory of Quantum Information* (C
 
 ## Start with the source bridge
 
-[From Watrous to quantum memory calibration](watrous_bridge.md) identifies the relevant sections, translates notation, and supplies the steps between the textbook framework and the project's results. Its worked example shows how a short description of the coupling profile selects a protected quantum subspace. It then connects that construction to the arbitrary-code converses and the distinction between fixed-error lifetime and vanishing-error rate.
+[From Watrous to quantum memory calibration](watrous_bridge.md) identifies the relevant sections, translates notation, and supplies the steps between the textbook framework and the project's results. Its worked example shows how a short description of the coupling profile selects a protected quantum subspace. It then connects that construction to the arbitrary-code converses and shows how replicated entanglement tests quantify the cost of storing quantum information for longer under continuous coupling uncertainty.
 
 The bridge separates three roles: textbook foundations, derivations supplied in this repository, and research ingredients credited in [Related work](../references/related_work.md). The selected textbook supports the mathematics; the precise memory model and calibration theorems are stated in the scientific pages.
 
@@ -17,9 +17,9 @@ The [milestone map](milestones.md) contains exactly 30 understanding targets in 
 | Phase | Milestones | Purpose |
 |---|---|---|
 | Background and preliminaries | M01–M11 | Build from states, channels, phases and reference entanglement to the information and coding tools needed to formulate the passive storage task. |
-| Narrative and innovation | M12–M30 | Connect profile averaging, code selection, information comparison and protected-subspace constructions to the two global theorems, their verification and their physical boundaries. |
+| Narrative and innovation | M12–M30 | Connect profile averaging, code selection, information comparison and protected-subspace constructions to the lifetime and calibration theorems, their verification and their physical boundaries. |
 
-This allocation gives the two converse routes and their matching constructions enough space to meet in a final synthesis. Each phase moves from individual ingredients toward the complete framework. Every milestone identifies its central question, understanding target, dependencies, role in the argument, conceptual connection, and source pointers. The map is a common guide to the project rather than a record of any reader's progress.
+The final milestones compare the exact two-value frontier with the sharp continuous-advice costs for a diverging subexponential storage time. Each phase moves from individual ingredients toward the complete framework. Every milestone identifies its central question, understanding target, dependencies, role in the argument, conceptual connection, and source pointers. The map is a common guide to the project rather than a record of any reader's progress.
 
 ## Return to the exact scientific statements
 
@@ -27,7 +27,8 @@ This allocation gives the two converse routes and their matching constructions e
 |---|---|
 | Which systems, records, operations and information are counted | [Model](../science/model.md) |
 | How long positive-rate storage works at a fixed error tolerance | [Continuous coupling uncertainty](../science/lifetime.md) |
-| How retained calibration information determines reliable rate | [Two-value calibration frontier](../science/calibration_rate.md) |
+| How retained calibration information determines reliable rate for two coupling values | [Two-value calibration frontier](../science/calibration_rate.md) |
+| How the hard bit budget and conditional information scale for continuous coupling uncertainty | [Continuous calibration frontier](../science/continuous_calibration.md) |
 | What supplied or finite-precision coupling data makes possible | [Memory with supplied couplings](../science/calibrated_memory.md) |
 | Why the limit order, correlations and passive restriction matter | [Interpretation and boundaries](../science/interpretation.md) |
 | What is checked numerically and what is proved analytically | [Verification guide](../verification/README.md) |

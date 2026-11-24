@@ -1,6 +1,6 @@
 # Interpretation and boundaries
 
-[Science map](README.md) · [Model](model.md) · [Lifetime](lifetime.md) · [Calibration rate](calibration_rate.md)
+[Science map](README.md) · [Model](model.md) · [Lifetime](lifetime.md) · [Two-value rate](calibration_rate.md) · [Continuous calibration](continuous_calibration.md)
 
 ## One noise field does not specify its protected subspaces
 
@@ -10,13 +10,16 @@ Unknown coefficients change the encoding problem. One endpoint protocol must pro
 
 The uncertainty has $`n`$ independently variable coordinates. A low-dimensional uncertainty model, such as one unknown common scale multiplying an otherwise known profile, is a different task. The theorem does not replace that structured model by independent uncertainty or claim the same obstruction for it.
 
-## Two results with different error limits
+## Storage guarantees and their error limits
 
 | Result | Quantity held fixed | Asymptotic conclusion |
 |---|---|---|
 | Interval-profile lifetime | Positive rate $`R`$, admissible error $`\epsilon`$, and uncertainty width $`\delta`$ | For sufficiently large registers, useful uncalibrated lifetime lies between positive multiples of $`\delta^{-2}`$. |
+| Continuous description cost | Fixed positive rate and error, with $`\tau=t\delta^2\to\infty`$ and $`\log_2\tau=o(n)`$ | Each logical qubit costs $`(1/2+o(1))\log_2\tau`$ hard bits. At tolerance $`\epsilon`$ the conditional mutual-information cost per logical qubit is $`((1-\epsilon)/2+o(1))\log_2\tau`$. |
 | Two-value calibration frontier | Dimensionless noise strength bounded away from zero; error required to vanish | Reliable logical rate equals the calibration-information rate, capped at one. |
 | Supplied-profile spectral code | Bounded couplings; storage time and error satisfying a subexponential condition | The retained rate approaches one. |
+
+### Two results with different error limits
 
 The lifetime result addresses a fixed operational tolerance. The binary frontier addresses arbitrarily reliable asymptotic storage. A nonzero but extremely rare event can obstruct the latter without being a practically important error at a chosen finite tolerance.
 
@@ -61,20 +64,9 @@ For this recovery, every nontrivial residual logical error is a Pauli error. Its
 
 The transcript is prepared before the unknown payload and carries information about the fixed spatial profile. It does not identify the common field realization in a later storage run. The same transcript may be reused for later payloads. Information from monitoring the data-run environment belongs to a different interface.
 
-The hard alphabet budget and the conditional mutual-information budget also answer different questions. A rare outcome can reveal an entire profile while contributing little mean information. Conversely, representing a large alphabet by an analog number does not make its worst-case description short. Both budgets have the same binary vanishing-error frontier, but their fixed-error converses differ. For continuous uncertainty and diverging $`t\delta^2`$, the results give
+The hard alphabet charges every possible transcript. Conditional mutual information averages how much information a transcript carries. Both budgets give the same binary vanishing-error rate. For a continuous profile, the [sharp calibration theorem](continuous_calibration.md) finds the leading hard cost of $`(R/2+o(1))n\log_2(t\delta^2)`$ bits at positive rate $`R`$ and diverging subexponential dimensionless hold time.
 
-```math
-B_n\ge\log_2D_n-o(n)
-```
-
-for a hard budget when fidelity stays bounded away from zero, while a fixed error tolerance $`\epsilon`$ implies
-
-```math
-I(\boldsymbol G;C\mid K)
-\ge(1-\epsilon)\log_2D_n-o(n)
-```
-
-for the stated uniform prior and information budget. [The lifetime page](lifetime.md#calibration-information-for-diverging-storage-times) gives the precise hypotheses. A direct finite-precision construction supplies long storage with a larger sufficient budget; the optimal continuous-profile information cost remains unresolved.
+At fixed half-diamond tolerance $`\epsilon`$, the mutual-information coefficient becomes $`(1-\epsilon)R/2`$ under the stated product-uniform prior. One can attain it by supplying a reliable transcript on a fraction approaching $`1-\epsilon`$ of runs and using a fixed output on the others. The error is evaluated on the resulting averaged channel. The same strategy still requires the reliable transcript to fit in the hard alphabet. The [one-phase lower bounds](lifetime.md#calibration-information-for-diverging-storage-times) apply without the subexponential restriction, with correspondingly weaker estimates.
 
 ## Allowing control during storage changes the task
 
@@ -125,6 +117,6 @@ The sequence is an explicit boundary example, not a proposed new control method 
 
 ## What the result establishes
 
-Within the stated passive interface, supplied knowledge of an extensive coupling profile changes the accessible storage rate and lifetime. The continuous theorem quantifies this at fixed error, and the two-value theorem gives an exact retained-information frontier. The proof tools and supplied-spectrum comparison have established antecedents, detailed in [Related work](../references/related_work.md).
+Within the stated passive interface, supplied knowledge of an extensive coupling profile changes the accessible storage rate and lifetime. The lifetime theorem fixes the lifetime scale of an uncalibrated device. The continuous and two-value frontiers quantify the amount of reusable profile information that restores positive-rate storage. The proof tools and supplied-spectrum comparison have established antecedents, detailed in [Related work](../references/related_work.md).
 
-The account does not establish the optimal cost of acquiring calibration experimentally, an efficient implementation of the general endpoint codes, the optimal continuous calibration frontier, or the best control-assisted memory. These are separate questions from the proved resource tradeoff.
+Acquisition complexity, efficient implementation of the general endpoint codes, and the best control-assisted lifetime remain separate questions.

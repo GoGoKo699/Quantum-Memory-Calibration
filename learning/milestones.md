@@ -2,9 +2,9 @@
 
 [Learning route](README.md) · [Watrous bridge](watrous_bridge.md) · [Scientific account](../science/README.md)
 
-The project asks how information about a fixed spatial coupling profile changes the quantum information that can be stored under one common fluctuating field. This map connects the mathematical tools, the two principal results, and the assumptions that make their comparison meaningful.
+The project asks how information about a fixed spatial coupling profile changes the quantum information that can be stored under one common fluctuating field. This map connects the mathematical tools, the lifetime and calibration theorems, and the assumptions that make their comparison meaningful.
 
-The allocation is **11 background/preliminaries milestones and 19 narrative/innovation milestones**. The background joins three prerequisites: channel-level protection of reference entanglement, classical information about a device, and coherent correction of phase errors. The narrative first develops the local converse and encoding ingredients, then combines them into the exact calibration frontier, the fixed-error lifetime theorem, and the supplied-profile comparison. Its final milestones integrate the numerical examples, physical boundaries, attribution, and remaining continuous-calibration gap. This is a map of the project's understanding targets, not a catalogue of every technical lemma.
+The allocation is **11 background/preliminaries milestones and 19 narrative/innovation milestones**. The background joins three prerequisites: channel-level protection of reference entanglement, classical information about a device, and coherent correction of phase errors. The narrative develops the local converse and encoding ingredients, then combines them into the exact two-value calibration frontier, the fixed-error lifetime theorem, and the supplied-profile comparison. Its final milestones develop the replicated converse and matching code for the continuous-advice frontier, then compare numerical checks and physical boundaries. This is a map of the project's understanding targets, not a catalogue of every technical lemma.
 
 The single educational anchor is **John Watrous, *The Theory of Quantum Information* (Cambridge University Press, 2018)**. Section and theorem numbers below refer to the author-provided text linked from the [official author page](https://jhwatrous.github.io/books-and-courses.html). The [source bridge](watrous_bridge.md#a-selective-route-through-watrous) identifies the selected readings and translates notation. Textbook pointers support the named prerequisite; the common-field model, calibration comparisons, phase-code construction, and resulting memory theorems are developed in the linked project pages.
 
@@ -260,13 +260,13 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** How precise must a finite coefficient description be for the spectral code to remain useful?
 
-**Understanding target.** Track how coordinate errors bounded by $`\eta`$ can enlarge a code's spectral interval by at most $`2n\eta`$. Connect the resulting precision requirement to a finite transcript alphabet, and keep one common payload dimension for every transcript. Recognize the rounding scheme as sufficient without assuming it is optimal.
+**Understanding target.** Track how coefficient errors bounded by $`\eta`$ can enlarge the spectral interval by at most $`2m\eta`$ in a block of $`m`$ sites. Keep a common payload dimension for every transcript. Explain why block rounding can reduce the per-site overhead compared with rounding at a precision set by the entire register.
 
-**Dependencies and story role.** Requires [M07], [M14], and [M20]. Makes the supplied-profile comparison concrete within the classical calibration interface.
+**Dependencies and story role.** Requires [M07], [M14], and [M20]. Provides the spectral and rounding ingredients used by the matching code in [M30].
 
 **Conceptual connection.** Classical description precision translates into a reference-complete quantum storage guarantee through a bound on accumulated spectral uncertainty.
 
-**Sources.** Project: [finite-precision construction](../science/calibrated_memory.md#an-explicit-finite-precision-calibration-scheme). Watrous: [§1.1.3][W1], [§3.3.2][W3], and [§5.1][W5] provide the spectral, channel-distance, and description-size foundations.
+**Sources.** Project: [finite-precision construction](../science/calibrated_memory.md#an-explicit-finite-precision-calibration-scheme) and [active-block code](../science/continuous_calibration.md#matching-code). Watrous: [§1.1.3][W1], [§3.3.2][W3], and [§5.1][W5] provide the spectral, channel-distance, and description-size foundations.
 
 ### M22. Gaussian bad events and parameter order
 
@@ -320,21 +320,21 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** What calibration information becomes necessary if the storage time grows beyond the uncertainty scale?
 
-**Understanding target.** For $`t_n\delta_n^2\to\infty`$, distinguish the hard-budget necessity $`B_n\ge\log_2D_n-o(n)`$ at fidelity bounded away from zero from the information-budget necessity $`I(\boldsymbol G:C\mid K)\ge(1-\epsilon)\log_2D_n-o(n)`$ at fixed error. Explain the entropy averaging in the latter and why neither condition alone is an optimal sufficiency statement for continuous profiles.
+**Understanding target.** Replicate a fixed code's entanglement test across $`q`$ independent phases while sharing one fixed profile. Regroup by physical site to obtain a tensor Schur comparison and an entanglement-breaking benchmark of $`D^{-q}`$. Explain why controlling the occupancy of Boolean subset-sum frequencies permits $`q`$ close to $`\tfrac12\log_2(t_n\delta_n^2)`$. Convert the resulting rarity of a high-fidelity code into a hard menu-size constraint or a conditional-information constraint via decorrelation.
 
-**Dependencies and story role.** Requires [M15], [M21], [M24], and [M25]. Extends the time-scale comparison into an information-resource consequence.
+**Dependencies and story role.** Requires [M15], [M21], [M24], and [M25]. Sharpens the one-phase linear bound into a precision cost that grows with the requested storage time.
 
-**Conceptual connection.** Hard descriptions and mean statistical information agree on some vanishing-error limits while charging rare informative calibration outcomes differently at fixed error.
+**Conceptual connection.** The replicated tests share the profile and use independent phases. Their product fidelity makes it possible to bound the rarity of a good code for one physical storage interval.
 
-**Sources.** Project: [diverging-time calibration bounds](../science/lifetime.md#calibration-information-for-diverging-storage-times). Watrous: [§5.1 and §5.2.3][W5] for entropy and data processing, and [§1.2.2, Theorem 1.14][W1] for Jensen averaging. The bounded-limit step is supplied in the project.
+**Sources.** Project: [continuous calibration converse](../science/continuous_calibration.md#converse) and [one-phase bounds](../science/lifetime.md#calibration-information-for-diverging-storage-times). Watrous: [§4.1.3][W4] for Schur positivity and [§5.2.3][W5] for relative-entropy data processing.
 
 ### M27. Interpreting finite verification
 
 **Central question.** Which parts of the scientific argument can finite computation check, and what remains an analytic statement?
 
-**Understanding target.** Read the sign-average and code-eigenspace checks as tests of conventions and constructions. Interpret the seven-block Hamming example as a phase-only recovery under a correlated error distribution. Explain its logical half-diamond error, the difference from independent errors with identical marginals, and the role of numerical tolerances.
+**Understanding target.** Read the sign-average and code-eigenspace checks as tests of conventions and constructions. Interpret the seven-block Hamming example as a phase-only recovery under a correlated error distribution. Explain its logical half-diamond error and why matching marginals do not determine a correlated error law. Read the replicated Schur and occupancy checks as finite tests of tensor ordering, difference rank, and the spectral comparison.
 
-**Dependencies and story role.** Requires [M17], [M19], [M22], [M23], and [M25]. Connects both theorem branches to reproducible finite evidence without changing their proof domains.
+**Dependencies and story role.** Requires [M17], [M19], [M22], and [M25]–[M26]. Connects the theorem branches to reproducible finite evidence without changing their proof domains.
 
 **Conceptual connection.** Computation can expose an incorrect factor, code assignment, or independence assumption; finite examples do not certify an arbitrary-code asymptotic theorem.
 
@@ -356,7 +356,7 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** Which apparent tensions disappear when the supplied information, permitted operations, and error limit are stated together?
 
-**Understanding target.** Compare uncalibrated fixed-error lifetime, the binary reliable-rate frontier, supplied-profile spectral storage, and the controlled boundary. Distinguish reusable static-profile information from data-run error feedback and from the experiments used to acquire calibration. Place the unrestricted-code results relative to known-profile and fixed-code analyses.
+**Understanding target.** Compare uncalibrated fixed-error lifetime, the two-value reliable-rate frontier, the continuous calibration frontier, supplied-profile spectral storage, and the controlled boundary. Distinguish reusable static-profile information from data-run error feedback and from the experiments used to acquire calibration. Place the unrestricted-code results relative to known-profile and fixed-code analyses.
 
 **Dependencies and story role.** Integrates [M20], [M21], [M23], and [M25]–[M28]. Moves from individual conclusions to a consistent comparison of physical tasks.
 
@@ -366,15 +366,15 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 ### M30. The complete calibration-memory picture
 
-**Central question.** What has the combined theory established about access to collective-noise protection, and what precise question remains open?
+**Central question.** How do the replicated converse and active-block code determine the cost of continuous calibration?
 
-**Understanding target.** Explain the fixed-error lifetime theorem and exact binary calibration frontier as complementary consequences of the passive interface. Identify the inherited Schur comparison, spectral occupancy, and protected-block methods separately from the resource-sensitive conclusions. State the unresolved continuous-profile gap: for fixed $`g_0`$ and $`\delta>0`$, diverging polynomial storage times, and inverse-polynomial error, the proved costs are linear necessary hard advice and an $`O(n\log n)`$ sufficient rounding budget. Neither bound is claimed optimal in this regime.
+**Understanding target.** For $`\tau_n=t_n\delta_n^2\to\infty`$ with $`\log_2\tau_n=o(n)`$ and fixed $`0\lt R\lt1`$, match the lower bound to a code that calibrates $`Rn+o(n)`$ active sites at $`\tfrac12\log_2\tau_n+o(\log\tau_n)`$ bits per site. Explain the $`R/2`$ coefficient of $`n\log_2\tau_n`$ for the hard budget. At fixed half-diamond error $`0\lt\epsilon\lt1`$, show how randomized omission of accurate calibration gives the conditional-information coefficient $`(1-\epsilon)R/2`$. Keep the passive interface and the permitted average over the choice of protocol explicit.
 
-**Dependencies and story role.** Integrates [M23]–[M29]. Completes the route from elementary channel objects to the project's physical consequence and remaining boundary.
+**Dependencies and story role.** Integrates [M19], [M21], and [M26]–[M29]. Matches the lower and upper costs and compares the resulting frontier with the two-value case.
 
 **Conceptual connection.** Knowing that a large protected subspace exists is different from possessing the classical device information needed to select it.
 
-**Sources.** Project: [proof dependencies](../science/README.md#proof-dependencies), [what the result establishes](../science/interpretation.md#what-the-result-establishes), [the continuous-cost gap](../science/calibrated_memory.md#what-is-and-is-not-tight), and [contribution scope](../references/related_work.md#scope-of-the-resulting-contribution). Watrous: [§3.3.2][W3], [§4.1.3][W4], and [§5.2.3][W5] form the foundational chain; the [bridge](watrous_bridge.md#what-is-imported-and-what-is-proved-here) separates those foundations from the project results.
+**Sources.** Project: [proof dependencies](../science/README.md#proof-dependencies), [what the result establishes](../science/interpretation.md#what-the-result-establishes), [both continuous budgets](../science/continuous_calibration.md#the-two-calibration-budgets), [the matching code](../science/continuous_calibration.md#matching-code), and [contribution scope](../references/related_work.md#scope-of-the-resulting-contribution). Watrous: [§3.3.2][W3], [§4.1.3][W4], and [§5.2.3][W5] form the foundational chain; the [bridge](watrous_bridge.md#what-is-imported-and-what-is-proved-here) separates those foundations from the project results.
 
 [W1]: https://jhwatrous.github.io/TQI.1.pdf
 [W2]: https://jhwatrous.github.io/TQI.2.pdf

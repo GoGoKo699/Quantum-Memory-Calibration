@@ -6,7 +6,7 @@ A quantum memory must preserve an unknown state, including its entanglement with
 
 The selected educational anchor is **John Watrous, *The Theory of Quantum Information*, Cambridge University Press, 2018**. The [official author page](https://jhwatrous.github.io/books-and-courses.html) identifies the April 2018 publication and provides manuscript chapters; the [publisher record](https://www.cambridge.org/core/books/theory-of-quantum-information/AE4AA5638F808D2CFEB070C55431D897) identifies the published book. The section and theorem numbers below were checked against those author-provided chapters. Links point to that manuscript rather than reproducing it.
 
-This bridge selects the parts needed for the memory problem. It supplies the project-specific steps between them, including a complete two-qubit encoding, the channel comparison behind both converses, and the construction that attains the continuous lifetime order. The [milestone map](milestones.md) organizes the full scientific story; it does not require a preliminary reading of the entire book.
+This bridge selects the parts needed for the memory problem. It supplies the project-specific steps between them, including a complete two-qubit encoding, the channel comparison used in the converses, and the advances from an uncalibrated lifetime to sharp advice costs at longer storage times. The [milestone map](milestones.md) organizes the full scientific story; it does not require a preliminary reading of the entire book.
 
 ## The memory task and its resource boundary
 
@@ -419,6 +419,42 @@ A common payload dimension can be chosen below this bound for every transcript. 
 
 This is a vanishing-error frontier, not a claim that fidelity approaches zero above it. At weak fixed noise, the obstructing phase neighborhood may have extremely small probability. The fixed-error continuous lifetime theorem addresses a different limit, as quantified on the [interpretation page](../science/interpretation.md).
 
+## Continuous calibration at long storage times
+
+Return to independent interval uncertainty and write $`\tau=t\delta^2`$. The [continuous calibration frontier](../science/continuous_calibration.md) fixes $`0\lt R\lt1`$ and considers $`\tau_n\to\infty`$ with $`\log_2\tau_n=o(n)`$. The endpoints must store at least $`Rn`$ logical qubits. At any fixed $`0\lt\epsilon\lt1`$, the leading costs are
+
+```math
+B=\left(\frac R2+o(1)\right)n\log_2\tau_n,\qquad
+I(\boldsymbol G:C\mid K)=
+\left(\frac{(1-\epsilon)R}{2}+o(1)\right)n\log_2\tau_n.
+```
+
+Each equality gives the smallest leading cost under its own budget. The hard-budget leading coefficient can be reached with error tending to zero. In that limit the two leading costs agree. For example, if $`\tau_n=n^\alpha`$ for fixed $`\alpha\gt0`$, the optimal hard budget is about $`\alpha Rn\log_2n/2`$ worst-case bits. This requirement depends on the continuous profile promise even though the field still has a single fluctuating phase.
+
+### Why replicate an entanglement test?
+
+Fix the code indexed by a transcript and key. For one profile $`\boldsymbol g`$, write $`f(\boldsymbol g,\theta)`$ for its Bell-test acceptance probability at phase $`\theta`$ and $`f(\boldsymbol g)`$ for the phase average. With $`q`$ independent Gaussian phases and the same static profile, the product test accepts with average probability $`f(\boldsymbol g)^q`$. For $`q=2`$, multiply the two conditional acceptance probabilities and average them separately. The comparison code must then preserve entanglement with a reference of dimension $`D^2`$. The general test uses dimension $`D^q`$. These repeated tests are a proof device for bounding the original one-interval task.
+
+At fixed phase tuple $`(\theta_1,\ldots,\theta_q)`$, gather the $`q`$ copies of each physical site. Averaging the common coupling at that site gives a Schur matrix indexed by bit strings $`x,y\in\{0,1\}^q`$. Up to a diagonal unitary from the known center, its entries are
+
+```math
+\mathrm{sinc}(u_x-u_y),
+\qquad
+u_x=2\delta\sum_{a=1}^q x_a\theta_a .
+```
+
+The profile prior is independent across physical sites. This is what makes the averaged matrix a tensor product of $`n`$ of these site matrices even though all the copies at one site share its coupling.
+
+The [converse](../science/continuous_calibration.md#converse) bounds how many frequencies $`u_x`$ can fit in a unit interval. More than $`2^{r-1}`$ frequencies, counted with multiplicity, require $`r`$ independent differences of Boolean strings. Each corresponding Gaussian linear combination would have absolute value at most one. A joint small-ball estimate and a union bound control that event for $`q`$ just below $`\tfrac12\log_2\tau`$. The frequency occupancy bounds the Schur norm via comparison with a Gaussian Schur matrix. The separable-state comparison then gives a factor $`D^{-q}`$ against which to measure the cost of selecting a good code.
+
+For a fixed fidelity threshold $`s\gt0`$, any profile with $`f(\boldsymbol g)\ge s`$ contributes at least $`s^q`$ to the expected product-test acceptance. The bad phase tuples contribute less than half of this threshold for suitable parameters. As a result, the fraction of such profiles for any fixed code is at most $`2^{-(1/2-o(1))\log_2D\,\log_2\tau}`$ on the leading logarithmic scale at extensive payload. In the hard-alphabet model, the code menu must cover a set of profiles of positive probability. In the information model, decorrelate the transcript from the profile conditional on the key. Under the decorrelated law, good code selection is rare at exactly the same scale. Under the true law, if the mean fidelity is at least $`1-\epsilon`$, the event $`f(\boldsymbol G)\ge s`$ has probability at least $`(1-\epsilon-s)/(1-s)`$. Applying relative-entropy data processing to that event and taking $`s\downarrow0`$ after the size and time limit gives the fixed-error coefficient.
+
+### How the block code meets the precision cost
+
+The [matching code](../science/continuous_calibration.md#matching-code) calibrates only $`Rn+o(n)`$ active sites. Divide them into blocks of size $`m`$, large compared with $`\log\tau`$ and with $`\log m=o(\log\tau)`$. Work at fixed magnetization to remove $`g_0`$. Rounding each residual coefficient to within order $`1/(m\sqrt t\,\log\tau)`$ takes $`\tfrac12\log_2\tau+o(\log\tau)`$ bits per site. A narrow interval selected from the rounded spectrum remains narrow for the actual profile. The interval costs $`O(\log\tau+\log m)`$ payload qubits per block, which is a vanishing fraction. The spectral error is $`O((\log\tau)^{-2})`$ per block. Use the same randomization and first-moment outer phase correction as in the lifetime construction to bring the decoded error to zero while losing a vanishing fraction of rate. The block errors can remain correlated through the common field.
+
+For the conditional-information budget at fixed error, an independent coin activates the accurate protocol with probability approaching $`1-\epsilon`$. On other runs it sends a dummy transcript and returns a fixed state. The averaged channel meets the operational error tolerance, and the coin reduces conditional information in direct proportion to its activation probability. The hard budget still counts the full alphabet on accurate runs. This is why the two charges can have different leading costs at fixed error.
+
 ## What is imported and what is proved here
 
 Watrous provides a coherent foundation for channel representations, complete positivity, reference-complete error, entropy, and entanglement. The proof-specific connections are as follows.
@@ -428,7 +464,8 @@ Watrous provides a coherent foundation for channel representations, complete pos
 | Textbook foundation | Choi/complete-positivity equivalence, channel norms, Schur positivity, relative-entropy data processing, separability | The verified Watrous locators above |
 | Inherited memory method | Comparing a Schur channel with complete dephasing; storing in a densely occupied spectral interval | [Quantum-Spectral-Memory, pinned source](https://github.com/GoGoKo699/Quantum-Spectral-Memory/blob/ee5dc0e5529c7775bfaeabb2a5e744c51eb9431d/science/spectral_law.md) |
 | Inherited construction approach | Protected inner blocks, endpoint randomization, and an outer code | [Inhomogeneous-Collective-Memory, pinned source](https://github.com/GoGoKo699/Inhomogeneous-Collective-Memory/blob/b6bbf3cae33b300d0c793628e168616dc4919bdc/science/model.md) |
-| Derivation supplied here | Cosine and sinc profile averages; hard-menu and decorrelated-advice bounds; exact and reliable calibration frontiers | [Calibration proof](../science/calibration_rate.md), including its appendices |
+| Derivation supplied here | Cosine and sinc profile averages, one-phase converse methods, and the exact and reliable two-value calibration frontiers | [Two-value calibration proof](../science/calibration_rate.md), including its appendices |
+| Derivation supplied here | Replicated fidelity and a matching block code give sharp hard and conditional-information costs for long continuous-profile storage | [Continuous calibration proof](../science/continuous_calibration.md) |
 | Derivation supplied here | The uniform fixed-error lifetime order, explicit classical phase-code existence, and the correlated first-moment bound | [Lifetime proof](../science/lifetime.md) |
 | Model-specific benchmark | Known-profile spectral storage and an explicit finite-precision calibration scheme | [Supplied-coupling memory](../science/calibrated_memory.md) |
 
@@ -439,10 +476,10 @@ D\ge\frac{2^n}{1+G_1\sqrt{t/\epsilon}},
 \qquad G_1=\sum_j|g_j|.
 ```
 
-For bounded couplings and polynomial storage times, this permits a rate approaching one. The code depends on the profile. Supplying a finite-precision description is an explicit additional resource, whose sufficient cost is analyzed on the benchmark page; the full continuous-profile information tradeoff remains unresolved.
+For bounded couplings and polynomial storage times, this permits a rate approaching one. The code depends on the profile. The benchmark page prices direct rounding of the full profile. The continuous frontier sharpens this cost at every fixed rate below one for diverging subexponential times.
 
 The project does not introduce data processing, decoherence-free subspaces, phase-error correction, or the general outage idea. Its statements combine those tools within a specified passive interface and price the retained description of an extensive static coupling profile. [Related work](../references/related_work.md) preserves the relevant research comparisons, including earlier studies of calibration and incomplete noise knowledge.
 
 Three boundaries remain visible throughout the route. Calibration information is not the experimental cost of acquiring it. A single growing correlated register is not an independently repeated fixed channel of the kind defined in Watrous's §8.2.1. Permitting controls during storage changes the problem: the [control comparison](../science/interpretation.md) shows explicitly why the passive theorem should not be transferred to that setting.
 
-For exact hypotheses and constants, return to the [model](../science/model.md), [lifetime theorem](../science/lifetime.md), and [calibration theorem](../science/calibration_rate.md). The [verification guide](../verification/README.md) distinguishes finite numerical checks from the analytical arguments that establish the all-code and asymptotic statements.
+For exact hypotheses and constants, return to the [model](../science/model.md), [lifetime theorem](../science/lifetime.md), [two-value calibration theorem](../science/calibration_rate.md), and [continuous calibration theorem](../science/continuous_calibration.md). The [verification guide](../verification/README.md) distinguishes finite numerical checks from the analytical arguments that establish the all-code and asymptotic statements.

@@ -115,6 +115,8 @@ A hard alphabet bound implies $`I(S;C\mid K)\leq\log_2M`$. The converse need not
 
 Conditioning on the free key is essential. After converting signs into bits, a one-time-padded description $`C=S\oplus K`$ has $`I(S;C)=0`$, yet the endpoints recover all of $`S`$ from $`(C,K)`$ and $`I(S;C\mid K)=n`$. It is fully charged by the stated definition.
 
+The [continuous calibration theorem](continuous_calibration.md) evaluates both budgets in the limit of diverging subexponential dimensionless hold time. Its fixed-error mutual-information cost uses the average-channel error convention above.
+
 ## Why complete dephasing remains a valid benchmark
 
 Let $`\Delta_n`$ completely dephase all physical carriers in the computational basis. Applied after any allowed encoder, it leaves a classical mixture of computational labels and encoder records. The reference and everything available to the decoder are then separable. Recovery cannot create entanglement with the untouched reference, and the final overlap with $`\varphi_D`$ is at most $`1/D`$.

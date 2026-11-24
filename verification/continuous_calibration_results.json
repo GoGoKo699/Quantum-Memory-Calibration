@@ -1,0 +1,49 @@
+{
+  "affine_occupancy": {
+    "four_cube_nonempty_subsets": 65535
+  },
+  "all_checks_passed": true,
+  "calibration_bands": {
+    "largest_guaranteed_dimension": 4,
+    "maximum_true_width_ratio": 0.5,
+    "profiles": 54
+  },
+  "correlated_outer_recovery": {
+    "first_moment_tail_bound": 0.024458254643144,
+    "independent_tail_with_same_marginals": 0.00078009372816509,
+    "joint_phase_error_patterns": 64,
+    "logical_half_diamond_error": 8.4285506462539e-05,
+    "maximum_pauli_twirl_matrix_error": 4.4415781421968e-16,
+    "maximum_quadrature_change": 2.2204460492503e-16,
+    "tail_above_one_block": 0.0021888841818209
+  },
+  "numpy_version": "2.3.5",
+  "replicated_gram": {
+    "direct_tensor_integral_maximum_matrix_error": 2.8790975114856e-15,
+    "minimum_density_domination_eigenvalue": -3.5605772900716e-14,
+    "occupancy_cases": [
+      {
+        "norm_bound": 595.98988710216,
+        "occupancy": 64,
+        "sinc_norm": 64.0
+      },
+      {
+        "norm_bound": 9.3123419859712,
+        "occupancy": 1,
+        "sinc_norm": 3.0799927976371
+      },
+      {
+        "norm_bound": 55.874051915827,
+        "occupancy": 6,
+        "sinc_norm": 13.67817229794
+      },
+      {
+        "norm_bound": 74.49873588777,
+        "occupancy": 8,
+        "sinc_norm": 14.385657663077
+      }
+    ]
+  },
+  "schema_version": 1,
+  "tolerance": 2e-12
+}
