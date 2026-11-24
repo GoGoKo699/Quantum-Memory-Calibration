@@ -33,6 +33,8 @@ B_{\min}=\left(\frac{R}{2}+o(1)\right)n\log_2\tau.
 
 The converse allows arbitrary joint endpoint operations and the matching code achieves vanishing error. At fixed half-diamond error tolerance $`0\lt\epsilon\lt1`$, the minimum conditional mutual information under the product-uniform profile prior has coefficient $`(1-\epsilon)R/2`$ on the same scale. At polynomial dimensionless hold time, a fixed number of calibration bits per carrier cannot sustain positive-rate storage. [Statement, proof, and matching code](science/continuous_calibration.md).
 
+**Efficient compilation at the sharp calibration budget.** Fixed-weight spectral bands and an explicit phase-error decoder attain the same hard budget with clean encoder workspace and deterministic compilation. For diverging, polynomially bounded $`\tau`$, the ideal endpoints have polynomial gate count and the worst-profile half-diamond error is at most $`1/\lfloor\log_2\tau\rfloor`$. The [joint construction](science/compiled_calibration.md) uses the [fixed-weight band compiler](https://github.com/GoGoKo699/Quantum-Spectral-Memory/blob/main/science/fixed_weight_encoder.md) from Quantum Spectral Memory.
+
 **Exact calibration-rate frontier for two coupling values.** For $`g_j=g_0+\delta s_j`$, $`s_j\in\{-1,+1\}`$, and noise strength $`t\delta^2`$ bounded away from zero, the reliable storage rate is
 
 ```math
@@ -61,6 +63,7 @@ The scientific consequence is a distinction between a small number of noise fiel
 | What resources and errors are being counted? | [Model](science/model.md) |
 | Why does uncalibrated lifetime stop growing with register size? | [Continuous coupling uncertainty](science/lifetime.md) |
 | What precision does long passive storage require for continuous couplings? | [Sharp calibration cost](science/continuous_calibration.md) |
+| Can the endpoints at the sharp hard budget be compiled efficiently? | [Compiled calibration](science/compiled_calibration.md) |
 | Why does one calibration bit per carrier buy one asymptotic logical qubit per carrier? | [Two-value calibration frontier](science/calibration_rate.md) |
 | How does supplied or finite-precision calibration restore long storage? | [Memory with supplied couplings](science/calibrated_memory.md) |
 | Which ideas are inherited, and how do nearby results differ? | [Related work](references/related_work.md) and [primary-source record](references/source_evidence.md) |
@@ -72,9 +75,9 @@ The learning route uses one educational anchor: John Watrous, *The Theory of Qua
 
 ## Scope and reproducibility
 
-The results price retained classical calibration information, not the experiments needed to acquire it. They allow ideal endpoint operations and do not establish efficient code compilation or decoding. Allowing ideal operations during storage changes the problem: an explicit toggling sequence removes unknown sign correlations and permits positive-rate storage without calibration. These boundaries are developed in [Interpretation](science/interpretation.md).
+The results price retained classical calibration information. The compilation theorem counts classical preprocessing and ideal endpoint gates. Physical calibration acquisition and hardware overhead are separate resources. Allowing ideal operations during storage changes the problem: an explicit toggling sequence removes unknown sign correlations and permits positive-rate storage without calibration. These boundaries are developed in [Interpretation](science/interpretation.md).
 
-Three deterministic Python programs check finite physical sign averages, exact code eigenspaces, the replicated Schur comparison, calibration-band widths, and actual recovery under correlated noise. They support the calculations and examples; the all-size statements are proved in the scientific pages. See [Verification](verification/README.md) for commands, pinned dependencies, results, and numerical tolerances.
+Deterministic Python programs check physical sign averages, exact code eigenspaces, the replicated Schur comparison, compiled calibration bands, and syndrome recovery under correlated noise. They support the calculations and examples; the all-size statements are proved in the scientific pages. See [Verification](verification/README.md) for commands, pinned dependencies, results, and numerical tolerances.
 
 ## Purpose
 

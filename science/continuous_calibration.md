@@ -143,6 +143,8 @@ Let $`\epsilon'_n=o(1)`$ be the worst-profile error bound of this reliable code.
 
 The flag is independent of $`\boldsymbol G`$. The mutual-information budget therefore charges the reliable calibration only with weight $`p_n`$, giving the coefficient $`(1-\epsilon)R/2`$. The large transcript is still among the possibilities of the hard alphabet.
 
+The [compiled construction](compiled_calibration.md) attains the same leading hard budget with explicit clean endpoint circuits. The fixed-weight compiler and efficient outer decoder give a gate-count bound polynomial in register size at polynomial dimensionless hold times.
+
 ## Applicability
 
 The resolved frontier is for fixed positive rate below one and diverging subexponential $`t\delta^2`$. Exponential hold times, exact zero-error storage for continuous profiles, and the number of experiments needed to acquire a transcript involve different questions. The construction also relies on ideal endpoint operations and the specified averaging of the independent key. See [related work](../references/related_work.md#continuous-description-cost) for the inherited ingredients and [finite checks](../verification/README.md#continuous-calibration-checks) for small examples of the argument.

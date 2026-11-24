@@ -18,6 +18,7 @@
 - [Operational model](science/model.md): Channel normalization, allowed endpoint operations, classical records, random keys, counted quantum carriers, calibration interface, and error criteria. Read this before transferring a theorem to a different noise or control model.
 - [Continuous uncertainty](science/lifetime.md): Why fixed uncertainty prevents a positive-rate passive lifetime from growing with register size; explicit constants and constructions; hard-budget and information-budget implications for diverging times.
 - [Continuous calibration cost](science/continuous_calibration.md): Sharp hard and conditional-mutual-information budgets for positive-rate storage at diverging subexponential dimensionless hold time, with a fidelity-moment converse and a correlated-error-correcting code.
+- [Compiled calibration](science/compiled_calibration.md): Reversible fixed-weight spectral bands, efficient phase recovery, and attainability of the sharp hard calibration coefficient with polynomial endpoints at polynomial hold times.
 - [Two-value calibration](science/calibration_rate.md): Exact asymptotic rate, finite hard-alphabet and mutual-information bounds, zero-error pair codes, positive-coupling class codes, and generic converse lemmas.
 - [Supplied coupling profile](science/calibrated_memory.md): Inherited spectral-occupancy baseline and direct finite-precision calibration construction.
 - [Interpretation](science/interpretation.md): Distinct error limits, rare Gaussian events, correlated-error example, reusable device information, and the during-storage-control boundary.
@@ -30,6 +31,7 @@
 - [Verification guide](verification/README.md): Commands, dependencies, checks, numerical tolerances, and limits.
 - [Calibration checks](verification/check_calibration.py): Physical sign averages, CP comparisons, exact eigenspaces, conditional information, and Gaussian error-floor probabilities.
 - [Continuous calibration checks](verification/check_continuous_calibration.py): Exact Boolean-cube rank bounds, replicated Schur matrices, rational rounding, and correlated block recovery.
+- [Compiled calibration checks](verification/check_compiled_calibration.py): Signed-count rank/unrank, exact calibration-cell corners, finite concatenated code recovery, and a common-phase twirl.
 - [Correlated phase-code check](verification/check_phase_code.py): Actual finite syndrome recovery under one shared Gaussian field.
 
 The analytical pages are authoritative for the theorem statements. Computational examples do not replace their all-size proofs. Retained calibration information and its experimental acquisition cost are different resources throughout this account.

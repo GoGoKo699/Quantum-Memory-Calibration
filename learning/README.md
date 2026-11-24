@@ -31,6 +31,7 @@ The final milestones compare the exact two-value frontier with the sharp continu
 | How the hard bit budget and conditional information scale for continuous coupling uncertainty | [Continuous calibration frontier](../science/continuous_calibration.md) |
 | What supplied or finite-precision coupling data makes possible | [Memory with supplied couplings](../science/calibrated_memory.md) |
 | Why the limit order, correlations and passive restriction matter | [Interpretation and boundaries](../science/interpretation.md) |
+| How are the endpoints at the sharp hard budget compiled? | [Compiled calibration](../science/compiled_calibration.md) |
 | What is checked numerically and what is proved analytically | [Verification guide](../verification/README.md) |
 
 The distinction between a fixed error tolerance and an error required to vanish is essential throughout. So is the difference between information retained about the device and the experiments used to acquire it. The bridge and milestone map keep those distinctions aligned with the exact statements.
