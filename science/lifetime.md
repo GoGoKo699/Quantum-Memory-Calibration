@@ -338,6 +338,8 @@ The [seven-block verification](../verification/check_phase_code.py) integrates t
 
 ## Calibration information for diverging storage times
 
+The following one-phase bounds apply whenever $`\tau_n=t_n\delta_n^2\to\infty`$. The [sharp continuous calibration theorem](continuous_calibration.md) strengthens them at positive rate for $`\log_2\tau_n=o(n)`$ by using replicated fidelity instead of a single conditional fidelity.
+
 ### Hard bit budgets
 
 Consider any sequence of protocols with $`\tau_n=t_n\delta_n^2\to\infty`$. Let the calibration alphabet have size at most $`M_n`$ and write $`B_n=\log_2M_n`$. If fidelity remains bounded below by a positive constant uniformly over all profiles, then
@@ -386,7 +388,7 @@ For every nonzero $`Z`$, $`\mathrm{sinc}(2\sqrt\tau Z)\to0`$ as $`\tau\to\infty`
 \boxed{I_n\ge(1-\epsilon)\log_2D_n-o(n).}
 ```
 
-The coefficient $`1-\epsilon`$ must not be removed by identifying mutual information with a worst-case bit budget. A randomized transcript can convey much more information on a small fraction of runs than on the others. The hard alphabet counts every possible transcript; mutual information averages its statistical information. At vanishing error and extensive payload dimension, both converse statements require one calibration bit per logical qubit to leading order, but neither proves an optimal sufficiency theorem for continuous profiles.
+The coefficient $`1-\epsilon`$ must not be removed by identifying mutual information with a worst-case bit budget. A randomized transcript can convey much more information on a small fraction of runs than on the others. The hard alphabet counts every possible transcript; mutual information averages its statistical information. At vanishing error and extensive payload dimension, both one-phase converses give a lower bound of one calibration bit per logical qubit. The sharp continuous theorem identifies the additional logarithmic factor in its regime.
 
 ## What the lifetime comparison establishes
 

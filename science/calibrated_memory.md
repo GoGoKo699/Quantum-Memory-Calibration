@@ -142,14 +142,14 @@ This gives a simple sufficient advice budget
 B=O\!\left(n\log\left(1+n\delta\sqrt{t/\epsilon}\right)\right)
 ```
 
-and the displayed dimension bound. For fixed bounded couplings, polynomial storage time and inverse-polynomial error require $`O(n\log n)`$ hard calibration bits while retaining rate approaching one.
+and the displayed dimension bound. For fixed bounded couplings, polynomial storage time and inverse-polynomial error are achieved by this scheme with $`O(n\log n)`$ hard calibration bits while retaining rate approaching one.
 
-## What is and is not tight
+## Relation to the sharp calibration cost
 
 The supplied-spectrum construction explains the contrast with unknown continuous couplings: the same spectrum has large narrow intervals, but the encoder must know which eigenvectors lie together in one of them.
 
-The finite-precision scheme is a sufficient construction, not an optimal characterization of the calibration cost. The [continuous-uncertainty converse](lifetime.md#calibration-information-for-diverging-storage-times) requires $`\log_2D-o(n)`$ hard bits for extensive storage with diverging $`t\delta^2`$ and fidelity bounded away from zero. The direct rounding scheme can use an additional logarithmic factor in $`n`$ for polynomial times. That gap is not resolved here.
+This direct scheme rounds every coordinate and protects one global spectral interval. The [sharp continuous calibration theorem](continuous_calibration.md) bounds arbitrary endpoint codes and achieves the leading hard budget by calibrating only the active portion of the register, using blockwise spectral intervals, and correcting correlated phase errors. At fixed $`R\in(0,1)`$, the cost is $`(R/2+o(1))n\log_2(t\delta^2)`$ in its diverging subexponential regime. It also separately determines the leading mutual-information budget at fixed nonzero error.
 
-The [two-value coupling model](calibration_rate.md) has a sharper answer: its reliable storage rate equals the calibration-information rate, capped at one. Exact fixed-magnetization sectors make its achievability possible without increasing the calibration precision with storage time. Continuous coefficient uncertainty lacks that exact discrete simplification.
+The [two-value model](calibration_rate.md) uses exact constant-magnetization sectors and achieves reliable storage at one calibration bit per logical qubit to leading order. Its information cost stays constant per logical qubit as the hold time grows.
 
 Noise-adapted codes with supplied unequal couplings were already studied by [Layden, Chen, and Cappellaro](https://arxiv.org/abs/1903.01046). The present use of spectral occupancy is attributed to the prior spectral-memory analysis above. The separate contribution examined in this repository is the resource-sensitive comparison with unknown profiles; [Related work](../references/related_work.md) gives the detailed distinctions.
