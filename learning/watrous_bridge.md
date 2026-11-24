@@ -438,7 +438,7 @@ Fix the code indexed by a transcript and key. For one profile $`\boldsymbol g`$,
 At fixed phase tuple $`(\theta_1,\ldots,\theta_q)`$, gather the $`q`$ copies of each physical site. Averaging the common coupling at that site gives a Schur matrix indexed by bit strings $`x,y\in\{0,1\}^q`$. Up to a diagonal unitary from the known center, its entries are
 
 ```math
-\operatorname{sinc}(u_x-u_y),
+\mathrm{sinc}(u_x-u_y),
 \qquad
 u_x=2\delta\sum_{a=1}^q x_a\theta_a .
 ```

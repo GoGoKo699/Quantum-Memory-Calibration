@@ -32,8 +32,8 @@ To bound that fraction, take $`k`$ mathematical copies of the fixed code on inde
 Condition on the phase vector $`\boldsymbol\theta`$. Regroup the $`nk`$ physical qubits by site. Since the profile prior has independent coordinates, its averaged channel is a tensor product over the $`n`$ sites. In the $`k`$-bit occupation basis at one site, let $`x\in\{0,1\}^k`$ and define the frequency $`u_x=2\delta x\cdot\boldsymbol\theta`$. The Schur matrix at that site is, up to conjugation by a diagonal unitary from $`g_0`$,
 
 ```math
-S_{xy}=\mathbb E_{V\sim\operatorname{Unif}[-1,1]} e^{iV(u_x-u_y)}
-       =\operatorname{sinc}(u_x-u_y).
+S_{xy}=\mathbb E_{V\sim\mathrm{Unif}[-1,1]} e^{iV(u_x-u_y)}
+       =\mathrm{sinc}(u_x-u_y).
 ```
 
 Write $`v(s)_x=e^{isu_x}`$. As $`S=\mathbb E_V v(V)v(V)^\dagger`$ is a Gram matrix, density comparison inside the positive integral yields
