@@ -455,6 +455,12 @@ The [matching code](../science/continuous_calibration.md#matching-code) calibrat
 
 For the conditional-information budget at fixed error, an independent coin activates the accurate protocol with probability approaching $`1-\epsilon`$. On other runs it sends a dummy transcript and returns a fixed state. The averaged channel meets the operational error tolerance, and the coin reduces conditional information in direct proportion to its activation probability. The hard budget still counts the full alphabet on accurate runs. This is why the two charges can have different leading costs at fixed error.
 
+### How the endpoints become circuits
+
+A fixed-weight sector makes the known common offset a scalar. The [fixed-weight band compiler](https://github.com/GoGoKo699/Quantum-Spectral-Memory/blob/main/science/fixed_weight_encoder.md) uses the transcript to count suffixes by both signed energy and residual weight. Its clean rank/unrank pair extends linearly to a payload entangled with a reference, as in Watrous [§2.2.2](https://jhwatrous.github.io/TQI.2.pdf).
+
+At recovery, undoing the Hadamards converts each Pauli phase pattern into a bit-error pattern. A parity syndrome is constant across all codewords shifted by the same error. Therefore measuring it leaves the amplitudes of a superposition intact. The [compiled calibration proof](../science/compiled_calibration.md) uses a concatenated code with an explicit decoder for this step. Watrous [§4.1.2](https://jhwatrous.github.io/TQI.4.pdf) gives the Weyl averaging framework and [§3.3.2](https://jhwatrous.github.io/TQI.3.pdf) gives the reference-complete error criterion.
+
 ## What is imported and what is proved here
 
 Watrous provides a coherent foundation for channel representations, complete positivity, reference-complete error, entropy, and entanglement. The proof-specific connections are as follows.
@@ -467,6 +473,7 @@ Watrous provides a coherent foundation for channel representations, complete pos
 | Derivation supplied here | Cosine and sinc profile averages, one-phase converse methods, and the exact and reliable two-value calibration frontiers | [Two-value calibration proof](../science/calibration_rate.md), including its appendices |
 | Derivation supplied here | Replicated fidelity and a matching block code give sharp hard and conditional-information costs for long continuous-profile storage | [Continuous calibration proof](../science/continuous_calibration.md) |
 | Derivation supplied here | The uniform fixed-error lifetime order, explicit classical phase-code existence, and the correlated first-moment bound | [Lifetime proof](../science/lifetime.md) |
+| End-to-end construction | Fixed-weight reversible spectral bands and a polynomial concatenated phase decoder attain the sharp leading hard cost at polynomial hold times | [Compiled calibration](../science/compiled_calibration.md) |
 | Model-specific benchmark | Known-profile spectral storage and an explicit finite-precision calibration scheme | [Supplied-coupling memory](../science/calibrated_memory.md) |
 
 The known-profile comparison explains the physical value of calibration. If the spectrum of a supplied generator contains many eigenvalues in a width-$`w`$ interval, their span has half-diamond error at most $`tw^2/4`$. Counting spectral cells gives a code with

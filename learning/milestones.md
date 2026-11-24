@@ -332,13 +332,13 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** Which parts of the scientific argument can finite computation check, and what remains an analytic statement?
 
-**Understanding target.** Read the sign-average and code-eigenspace checks as tests of conventions and constructions. Interpret the seven-block Hamming example as a phase-only recovery under a correlated error distribution. Explain its logical half-diamond error and why matching marginals do not determine a correlated error law. Read the replicated Schur and occupancy checks as finite tests of tensor ordering, difference rank, and the spectral comparison.
+**Understanding target.** Read the sign-average and code-eigenspace checks as tests of conventions and constructions. Interpret the seven-block Hamming example as a phase-only recovery under a correlated error distribution. Explain its logical half-diamond error and why matching marginals do not determine a correlated error law. Read the replicated Schur and occupancy checks as finite tests of tensor ordering, difference rank, and the spectral comparison. Compare direct fixed-weight enumeration with the compiled rank/unrank counts and check that a decoding syndrome depends only on the error pattern.
 
 **Dependencies and story role.** Requires [M17], [M19], [M22], and [M25]–[M26]. Connects the theorem branches to reproducible finite evidence without changing their proof domains.
 
 **Conceptual connection.** Computation can expose an incorrect factor, code assignment, or independence assumption; finite examples do not certify an arbitrary-code asymptotic theorem.
 
-**Sources.** Project: [verification guide](../verification/README.md), [calibration checks](../verification/check_calibration.py), and [phase-code check](../verification/check_phase_code.py). Watrous: [§3.3.2][W3] and [§4.1.3][W4] define the channel-error and positivity objects being checked.
+**Sources.** Project: [verification guide](../verification/README.md), [calibration checks](../verification/check_calibration.py), [phase-code check](../verification/check_phase_code.py), and [compiled calibration checks](../verification/check_compiled_calibration.py). Watrous: [§3.3.2][W3] and [§4.1.3][W4] define the channel-error and positivity objects being checked.
 
 ### M28. Adding control changes the storage interface
 
@@ -368,13 +368,13 @@ M12–M21 build the profile-averaging, advice, and encoding ingredients. M22–M
 
 **Central question.** How do the replicated converse and active-block code determine the cost of continuous calibration?
 
-**Understanding target.** For $`\tau_n=t_n\delta_n^2\to\infty`$ with $`\log_2\tau_n=o(n)`$ and fixed $`0\lt R\lt1`$, match the lower bound to a code that calibrates $`Rn+o(n)`$ active sites at $`\tfrac12\log_2\tau_n+o(\log\tau_n)`$ bits per site. Explain the $`R/2`$ coefficient of $`n\log_2\tau_n`$ for the hard budget. At fixed half-diamond error $`0\lt\epsilon\lt1`$, show how randomized omission of accurate calibration gives the conditional-information coefficient $`(1-\epsilon)R/2`$. Keep the passive interface and the permitted average over the choice of protocol explicit.
+**Understanding target.** For $`\tau_n=t_n\delta_n^2\to\infty`$ with $`\log_2\tau_n=o(n)`$ and fixed $`0\lt R\lt1`$, match the lower bound to a code that calibrates $`Rn+o(n)`$ active sites at $`\tfrac12\log_2\tau_n+o(\log\tau_n)`$ bits per site. Explain the $`R/2`$ coefficient of $`n\log_2\tau_n`$ for the hard budget. At fixed half-diamond error $`0\lt\epsilon\lt1`$, show how randomized omission of accurate calibration gives the conditional-information coefficient $`(1-\epsilon)R/2`$. Keep the passive interface and the permitted average over the choice of protocol explicit. Explain how fixed-weight rank/unrank and coherent syndrome recovery yield clean polynomial-size endpoints at polynomial hold times.
 
 **Dependencies and story role.** Integrates [M19], [M21], and [M26]–[M29]. Matches the lower and upper costs and compares the resulting frontier with the two-value case.
 
 **Conceptual connection.** Knowing that a large protected subspace exists is different from possessing the classical device information needed to select it.
 
-**Sources.** Project: [proof dependencies](../science/README.md#proof-dependencies), [what the result establishes](../science/interpretation.md#what-the-result-establishes), [both continuous budgets](../science/continuous_calibration.md#the-two-calibration-budgets), [the matching code](../science/continuous_calibration.md#matching-code), and [contribution scope](../references/related_work.md#scope-of-the-resulting-contribution). Watrous: [§3.3.2][W3], [§4.1.3][W4], and [§5.2.3][W5] form the foundational chain; the [bridge](watrous_bridge.md#what-is-imported-and-what-is-proved-here) separates those foundations from the project results.
+**Sources.** Project: [proof dependencies](../science/README.md#proof-dependencies), [what the result establishes](../science/interpretation.md#what-the-result-establishes), [both continuous budgets](../science/continuous_calibration.md#the-two-calibration-budgets), [the matching code](../science/continuous_calibration.md#matching-code), [compiled endpoints](../science/compiled_calibration.md), and [contribution scope](../references/related_work.md#scope-of-the-resulting-contribution). Watrous: [§3.3.2][W3], [§4.1.3][W4], and [§5.2.3][W5] form the foundational chain; the [bridge](watrous_bridge.md#what-is-imported-and-what-is-proved-here) separates those foundations from the project results.
 
 [W1]: https://jhwatrous.github.io/TQI.1.pdf
 [W2]: https://jhwatrous.github.io/TQI.2.pdf

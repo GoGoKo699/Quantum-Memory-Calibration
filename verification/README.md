@@ -11,9 +11,10 @@ python -m pip install -r verification/requirements.txt
 python verification/check_calibration.py --output verification/calibration_results.json
 python verification/check_continuous_calibration.py --output verification/continuous_calibration_results.json
 python verification/check_phase_code.py --output verification/phase_code_results.json
+python verification/check_compiled_calibration.py
 ```
 
-The programs are deterministic and use no Monte Carlo sampling. Their optional `--output` argument writes a compact JSON report. Omitting it prints the report. A failed check raises an exception and returns a nonzero exit status. The committed reports were generated with NumPy 2.3.5.
+The programs are deterministic and use no Monte Carlo sampling. The first three checks accept `--output` to write a compact JSON report. The compiled-calibration check uses the Python standard library and prints its results. A failed check raises an exception and returns a nonzero exit status. The committed reports were generated with NumPy 2.3.5.
 
 ## Calibration checks
 
@@ -42,6 +43,12 @@ This example checks the part of the [lifetime construction](../science/lifetime.
 [check_continuous_calibration.py](check_continuous_calibration.py) checks the building blocks of the [sharp calibration theorem](../science/continuous_calibration.md). It exhausts the 65,535 nonempty subsets of the four-dimensional Boolean cube and verifies the affine-rank bound. A direct profile quadrature for two sites and three replicas agrees with the regrouped Schur matrix within $`2.89\times10^{-15}`$. Four cases check the Gaussian density comparison and row-sum bound.
 
 Exact rational arithmetic verifies the calibration width on 54 profiles. The same program enumerates all 64 correlated phase patterns on three two-qubit blocks and applies a distance-six recovery. The probability of at least two erroneous blocks is approximately $`0.002189`$, below the first-moment bound $`0.024459`$. The decoded half-diamond error is approximately $`0.00008429`$. The [committed results](continuous_calibration_results.json) record the checks and tolerances.
+
+## Compiled calibration checks
+
+[check_compiled_calibration.py](check_compiled_calibration.py) compares fixed-weight signed-energy counts and rank/unrank with direct enumeration on 2,013 small profiles. It checks 4,096 calibration-cell corners in exact rational arithmetic. Exhaustive Reed–Solomon checks cover every received word over $`\mathbb F_4`$ at length three and $`\mathbb F_8`$ at length five, including syndrome invariance across messages. A short binary code concatenated with the length-three Reed–Solomon code corrects all 2,304 message/error pairs with up to three flipped bits.
+
+The common-Gaussian check computes the two-block twirl from its action on matrix elements and compares it with the Pauli error mixture. The joint error probability is approximately $`0.00203341`$, compared with $`0.00070377`$ for the product of its marginals. This example tests the correlation mechanism in the [compiled calibration](../science/compiled_calibration.md) proof.
 
 ## Hosted mathematics
 
