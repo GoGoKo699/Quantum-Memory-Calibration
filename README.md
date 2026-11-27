@@ -4,6 +4,14 @@ How much information about a device is needed to use its common noise field as a
 
 This repository studies a register coupled to one Gaussian dephasing field through fixed, spatially unequal coefficients. When those coefficients are supplied, a large protected subspace can be chosen from the known spectrum. When each coefficient is independently uncertain within a fixed interval, one code must instead work for every allowed profile. That information constraint changes the achievable storage time even though the bath still contains only one noise field.
 
+## Run the compiled memory
+
+1. **Compile before the payload arrives.** For the chosen rate and hold time, take the supplied [coupling-cell index](science/compiled_calibration.md#exact-finite-spectral-bands) for each active carrier. On each block, find the most populated fixed-weight integer energy bin. Use the [signed-energy and weight table](science/compiled_calibration.md#compile-and-invert-the-inner-encoding) to compile rank and unrank on its selected strings. Prepare a binary linear encoder and decoder for the [concatenated phase-error code](science/compiled_calibration.md#explicit-outer-code-and-terminal-syndrome-recovery).
+2. **Write and hold.** Prepare fresh workspace, fix unused carriers in computational-basis states, and initialize any surplus outer logical inputs to a fixed state. Apply the binary encoder, Hadamards on its encoded bits, and independent random logical X flips. Keep those flip bits as a classical key. Reversibly unrank each masked block into fresh physical wires, use its rank to clear the input, and uncompute the work. During the hold, only the physical carriers retain quantum information and the shared Gaussian field acts through their native Z couplings.
+3. **Read and correct.** Invert the block encoders, undo the keyed flips, then undo the Hadamards. Measure only the outer parity-check syndrome. Compute a fixed representative of that syndrome and decode it with the binary and Reed–Solomon decoders. Apply the resulting bit correction, invert the binary encoder and return the quantum payload. The protocol uses a fixed fallback outside the decoder's guaranteed radius and does not postselect.
+
+The guarantee is for the returned state, including correlations with an external reference. It averages over the key and field, and holds uniformly over the allowed coupling profiles. The shared field can correlate errors across blocks. The [resource accounting](science/compiled_calibration.md#calibration-cost-and-comparison) charges the hard transcript, at most one key bit per carrier, classical compilation and ideal endpoint gates. The endpoint costs are polynomial at polynomial dimensionless hold time. Physical calibration acquisition and fault-tolerant endpoint costs are separate. [Finite checks](verification/README.md#compiled-calibration-checks)
+
 ## Main results
 
 For $`n`$ physical qubits, the coupling operator and storage channel are
